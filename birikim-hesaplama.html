@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Birikim ve bileşik getiri hesaplama | Hesapça</title>
+<meta name="description" content="Aylık düzenli yatırımla bileşik getiri sonucunu ve enflasyondan arındırılmış reel değeri yıl yıl hesaplayın.">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta property="og:title" content="Birikim ve bileşik getiri hesaplama | Hesapça">
+<meta property="og:description" content="Aylık düzenli yatırımla bileşik getiri sonucunu ve enflasyondan arındırılmış reel değeri yıl yıl hesaplayın.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<link rel="canonical" href="https://hesapca.example/birikim-hesaplama.html">
+<link rel="stylesheet" href="style.css">
+<script>(function(){try{var t=localStorage.getItem('hc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"Birikim ve bileşik getiri hesaplama","description":"Aylık düzenli yatırımla bileşik getiri sonucunu ve enflasyondan arındırılmış reel değeri yıl yıl hesaplayın.","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"tr","offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Getiri oranını nasıl seçmeliyim?","acceptedAnswer":{"@type":"Answer","text":"Kullandığın araca göre makul bir aralığı dene: iyimser, orta ve kötümser senaryo için üç ayrı hesap yap. Tek bir rakama güvenme."}},{"@type":"Question","name":"Reel getiri negatif çıkarsa?","acceptedAnswer":{"@type":"Answer","text":"Getirin enflasyonun altındaysa paran alım gücü kaybediyor demektir. Bu durumda aracı veya hedefi gözden geçirmek gerekir."}}]}]</script>
+</head>
+<body>
+<header class="top"><div class="wrap bar"><a class="brand" href="index.html"><span class="mark">₺</span>Hesapça</a><nav aria-label="Ana menü"><a href="index.html#araclar">Tüm araçlar</a><button class="iconbtn" id="themeBtn" type="button" aria-label="Açık veya koyu tema"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"></path></svg></button></nav></div></header>
+<main class="wrap">
+<nav class="crumb" aria-label="Sayfa yolu"><a href="index.html">Ana sayfa</a> › <a href="index.html#yatirim">Tasarruf ve yatırım</a></nav>
+<div class="head"><h1>Birikim ve bileşik getiri hesaplama</h1><p>Başlangıç tutarı, aylık eklemen, yıllık getiri ve süreyi yaz. Sonunda ne biriktireceğini ve enflasyondan arındırılmış değerini gör.</p></div>
+<div class="tool"><div><div class="card"><div class="row2"><div class="field"><label for="ilk">Başlangıç tutarı</label><div class="inp"><input id="ilk" type="text" inputmode="decimal" autocomplete="off" data-money="2" value="50.000"><span class="suf">₺</span></div></div><div class="field"><label for="aylik">Aylık ekleme</label><div class="inp"><input id="aylik" type="text" inputmode="decimal" autocomplete="off" data-money="2" value="5.000"><span class="suf">₺</span></div></div></div>
+<div class="row2"><div class="field"><label for="getiri">Yıllık getiri</label><div class="inp"><input id="getiri" type="text" inputmode="decimal" autocomplete="off" data-num value="40"><span class="suf">%</span></div><small>Varsayım. Gerçek getiri garanti edilmez.</small></div><div class="field"><label for="yil">Süre</label><div class="inp"><input id="yil" type="text" inputmode="decimal" autocomplete="off" data-num value="10"><span class="suf">yıl</span></div></div></div>
+<div class="field"><label for="enf">Yıllık enflasyon varsayımı</label><div class="inp"><input id="enf" type="text" inputmode="decimal" autocomplete="off" data-num value="30"><span class="suf">%</span></div><small>Reel değer için kullanılır.</small></div></div></div><aside class="slip" aria-live="polite"><div class="slip-h">Hesap dökümü</div><div class="big"><span class="big-l" id="bigL"></span><output class="big-v" id="bigV"></output></div><div class="tear"></div><div class="ledger" id="out"></div><div class="viz" id="viz"></div><div class="msg" id="msg" role="status"></div><p class="slip-note">Getiri aylık bileşik kabul edilir, ekleme ay başında yapılır. Vergi ve masraflar dahil değildir. Geçmiş getiri geleceği garanti etmez.</p></aside></div>
+
+<section class="prose"><h2>Bileşik getiri nasıl çalışır?</h2>
+<p>Kazandığın getiri anaparaya eklenir ve sonraki dönem o toplam üzerinden getiri kazanır. Süre uzadıkça yatırdığın para ile sonuç arasındaki fark hızla açılır.</p>
+<div class="formula">aylık getiri = (1 + yıllık getiri)^(1/12) − 1<br>bakiye = (önceki bakiye + aylık ekleme) × (1 + aylık getiri)</div>
+<h2>Reel değer neden önemli?</h2>
+<p>Yüksek enflasyonda sayı büyür ama alım gücü aynı oranda büyümez. Reel değer, sonucu bugünün parasına çevirir: sonuç ÷ (1 + enflasyon)^yıl.</p><h2>Sık sorulan sorular</h2><details><summary>Getiri oranını nasıl seçmeliyim?</summary><p>Kullandığın araca göre makul bir aralığı dene: iyimser, orta ve kötümser senaryo için üç ayrı hesap yap. Tek bir rakama güvenme.</p></details><details><summary>Reel getiri negatif çıkarsa?</summary><p>Getirin enflasyonun altındaysa paran alım gücü kaybediyor demektir. Bu durumda aracı veya hedefi gözden geçirmek gerekir.</p></details></section>
+<section class="related"><h2>Diğer hesaplayıcılar</h2><div class="grid"><a class="tool-card" href="enflasyon-hesaplama.html" data-k="Enflasyon ve alım gücü Paranın yıllar içinde ne kadar değer kaybettiğini hesapla. enflasyon alım gücü değer kaybı tüfe satın alma gücü fiyat artışı"><span class="glyph" aria-hidden="true">↘</span><span><h3>Enflasyon ve alım gücü</h3><p>Paranın yıllar içinde ne kadar değer kaybettiğini hesapla.</p></span></a><a class="tool-card" href="mevduat-faizi-hesaplama.html" data-k="Mevduat faizi hesaplama Vadeli hesabın brüt ve stopaj sonrası net getirisini gör. mevduat faiz getiri vadeli hesap stopaj net brüt banka"><span class="glyph" aria-hidden="true">↗</span><span><h3>Mevduat faizi hesaplama</h3><p>Vadeli hesabın brüt ve stopaj sonrası net getirisini gör.</p></span></a><a class="tool-card" href="temettu-hesaplama.html" data-k="Temettü hesaplama Hisse başı temettüden net geliri ve temettü verimini hesapla. temettü kar payı verim stopaj hisse lot net temettü gelir"><span class="glyph" aria-hidden="true">÷</span><span><h3>Temettü hesaplama</h3><p>Hisse başı temettüden net geliri ve temettü verimini hesapla.</p></span></a></div></section>
+</main>
+<footer class="wrap foot"><p><strong>Hesapça</strong>: sonuçlar tarayıcında hesaplanır, girdiğin rakamlar hiçbir yere gönderilmez.</p><p>Hesaplamalar bilgilendirme amaçlıdır ve bağlayıcı değildir; yatırım tavsiyesi içermez. Oranlar ve vergi dilimleri zamanla değişir. Karar vermeden önce bankandan veya resmi kaynaklardan doğrula.</p></footer>
+<script src="app.js"></script>
+<script>(() => {
+    H.on(['ilk', 'aylik', 'getiri', 'yil', 'enf'], () => {
+      const ilk = H.val('ilk'), add = H.val('aylik'), y = H.val('getiri') / 100;
+      const yrs = Math.max(1, Math.min(60, Math.round(H.val('yil'))));
+      const rm = Math.pow(1 + y, 1 / 12) - 1;
+      let bal = ilk, contrib = ilk;
+      const labels = [], base = [], gain = [];
+      for (let m = 1; m <= yrs * 12; m++) {
+        bal = (bal + add) * (1 + rm);
+        contrib += add;
+        if (m % 12 === 0) { labels.push(String(m / 12)); base.push(contrib); gain.push(Math.max(0, bal - contrib)); }
+      }
+      const real = bal / Math.pow(1 + H.val('enf') / 100, yrs);
+      H.big(yrs + ' yıl sonra', H.tl(bal, 0));
+      H.ledger('out', [
+        { k: 'Toplam yatırılan', v: H.tl(contrib, 0) },
+        { k: 'Toplam getiri', v: H.tl(bal - contrib, 0) },
+        { k: 'Getiri çarpanı', v: 'x' + H.fmt(contrib > 0 ? bal / contrib : 0, 2) },
+        { sep: true },
+        { k: 'Bugünün parasıyla', v: H.tl(real, 0), strong: true },
+        { k: 'Reel getiri (yıllık)', v: H.pct(((1 + y) / (1 + H.val('enf') / 100) - 1) * 100, 1) },
+      ]);
+      H.bars('viz', labels, [
+        { name: 'Yatırılan', values: base, color: 'var(--c1)' },
+        { name: 'Getiri', values: gain, color: 'var(--c0)' },
+      ], { label: 'Yıllara göre birikim' });
+    });
+  })();</script>
+</body>
+</html>

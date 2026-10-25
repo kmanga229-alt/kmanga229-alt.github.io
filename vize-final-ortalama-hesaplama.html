@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vize final ortalaması ve geçme notu hesaplama | Hesapça</title>
+<meta name="description" content="Vize ve final notundan ders ortalamasını, geçmek için gereken en düşük final notunu hesaplayın.">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta property="og:title" content="Vize final ortalaması ve geçme notu hesaplama | Hesapça">
+<meta property="og:description" content="Vize ve final notundan ders ortalamasını, geçmek için gereken en düşük final notunu hesaplayın.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<link rel="canonical" href="https://hesapca.example/vize-final-ortalama-hesaplama.html">
+<link rel="stylesheet" href="style.css">
+<script>(function(){try{var t=localStorage.getItem('hc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"Vize final ortalaması ve geçme notu hesaplama","description":"Vize ve final notundan ders ortalamasını, geçmek için gereken en düşük final notunu hesaplayın.","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"tr","offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Finalden 100 alsam da geçemiyorsam?","acceptedAnswer":{"@type":"Answer","text":"Gereken final notu 100'ü aşıyorsa mevcut vize notuyla hedef ortalamaya matematiksel olarak ulaşılamaz. Bütünleme veya ders tekrarı seçeneklerini yönetmelikte kontrol et."}}]}]</script>
+</head>
+<body>
+<header class="top"><div class="wrap bar"><a class="brand" href="index.html"><span class="mark">₺</span>Hesapça</a><nav aria-label="Ana menü"><a href="index.html#araclar">Tüm araçlar</a><button class="iconbtn" id="themeBtn" type="button" aria-label="Açık veya koyu tema"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"></path></svg></button></nav></div></header>
+<main class="wrap">
+<nav class="crumb" aria-label="Sayfa yolu"><a href="index.html">Ana sayfa</a> › <a href="index.html#egitim">Eğitim</a></nav>
+<div class="head"><h1>Vize final ortalaması ve geçme notu hesaplama</h1><p>Vize notunu ve etkisini yaz. Final notundan ortalamanı hesapla, ya da hedef ortalamaya ulaşmak için finalden kaç alman gerektiğini öğren.</p></div>
+<div class="tool"><div><div class="card"><div class="row2"><div class="field"><label for="vize">Vize notu</label><div class="inp"><input id="vize" type="text" inputmode="decimal" autocomplete="off" data-num value="55"><span class="suf">/ 100</span></div></div><div class="field"><label for="vw">Vize etkisi</label><div class="inp"><input id="vw" type="text" inputmode="decimal" autocomplete="off" data-num value="40"><span class="suf">%</span></div><small>Final etkisi otomatik 100 eksi bu.</small></div></div>
+<div class="row2"><div class="field"><label for="final">Final notu</label><div class="inp"><input id="final" type="text" inputmode="decimal" autocomplete="off" data-num value="60"><span class="suf">/ 100</span></div></div><div class="field"><label for="hedef">Geçme ortalaması</label><div class="inp"><input id="hedef" type="text" inputmode="decimal" autocomplete="off" data-num value="60"><span class="suf">/ 100</span></div><small>Genellikle 60. Yönetmeliğine bak.</small></div></div>
+<div class="field"><label for="fmin">Finalde şart olan en düşük not</label><div class="inp"><input id="fmin" type="text" inputmode="decimal" autocomplete="off" data-num value="50"><span class="suf">/ 100</span></div><small>Yoksa 0 yaz.</small></div></div></div><aside class="slip" aria-live="polite"><div class="slip-h">Hesap dökümü</div><div class="big"><span class="big-l" id="bigL"></span><output class="big-v" id="bigV"></output></div><div class="tear"></div><div class="ledger" id="out"></div><div class="viz" id="viz"></div><div class="msg" id="msg" role="status"></div><p class="slip-note">Üniversitelerin yönetmeliği farklıdır: bazı yerlerde başarı notu harf sistemine ve bağıl değerlendirmeye göre belirlenir. Bu araç düz ağırlıklı ortalamayı hesaplar.</p></aside></div>
+
+<section class="prose"><h2>Ders ortalaması nasıl hesaplanır?</h2>
+<p>Ortalama, vize ve final notlarının etkilerine göre ağırlıklı toplamıdır. Vize %40, final %60 ise:</p>
+<div class="formula">ortalama = vize × 0,40 + final × 0,60</div>
+<h2>Geçmek için finalden kaç almalıyım?</h2>
+<p>Hedef ortalamaya ulaşmak için gereken en düşük final notu, ortalama denkleminin finale göre çözülmesiyle bulunur:</p>
+<div class="formula">final = (hedef − vize × vize etkisi) ÷ final etkisi</div>
+<p>Finalde en düşük not şartı varsa gereken notun büyük olanı alınır.</p><h2>Sık sorulan sorular</h2><details><summary>Finalden 100 alsam da geçemiyorsam?</summary><p>Gereken final notu 100'ü aşıyorsa mevcut vize notuyla hedef ortalamaya matematiksel olarak ulaşılamaz. Bütünleme veya ders tekrarı seçeneklerini yönetmelikte kontrol et.</p></details></section>
+<section class="related"><h2>Diğer hesaplayıcılar</h2><div class="grid"><a class="tool-card" href="gano-hesaplama.html" data-k="GANO hesaplama Dönem ve genel not ortalamasını 4,00 sistemine göre hesapla. gano dno not ortalaması üniversite harf notu kredi akts 4 lük sistem"><span class="glyph" aria-hidden="true">G</span><span><h3>GANO hesaplama</h3><p>Dönem ve genel not ortalamasını 4,00 sistemine göre hesapla.</p></span></a><a class="tool-card" href="yks-puan-siralama-hesaplama.html" data-k="YKS puan ve sıralama TYT ve AYT netlerinden puan ve ÖSYM verisine dayalı tahmini sıralama. yks tyt ayt puan hesaplama sıralama net sayısal eşit ağırlık sözel obp diploma notu başarı sırası"><span class="glyph" aria-hidden="true">Y</span><span><h3>YKS puan ve sıralama</h3><p>TYT ve AYT netlerinden puan ve ÖSYM verisine dayalı tahmini sıralama.</p></span></a><a class="tool-card" href="yuzde-hesaplama.html" data-k="Yüzde hesaplama Yüzde bulma, yüzde fark, indirim ve artış için altı hızlı hesap. yüzde hesaplama yüzde kaç indirim zam artış oran yüzde fark"><span class="glyph" aria-hidden="true">%</span><span><h3>Yüzde hesaplama</h3><p>Yüzde bulma, yüzde fark, indirim ve artış için altı hızlı hesap.</p></span></a></div></section>
+</main>
+<footer class="wrap foot"><p><strong>Hesapça</strong>: sonuçlar tarayıcında hesaplanır, girdiğin rakamlar hiçbir yere gönderilmez.</p><p>Hesaplamalar bilgilendirme amaçlıdır ve bağlayıcı değildir; yatırım tavsiyesi içermez. Oranlar ve vergi dilimleri zamanla değişir. Karar vermeden önce bankandan veya resmi kaynaklardan doğrula.</p></footer>
+<script src="app.js"></script>
+<script>(() => {
+    H.on(['vize', 'vw', 'final', 'hedef', 'fmin'], () => {
+      const v = H.val('vize'), w = Math.max(0, Math.min(100, H.val('vw'))) / 100, fi = H.val('final'), tgt = H.val('hedef'), mn = H.val('fmin');
+      const ort = v * w + fi * (1 - w);
+      const need = w < 1 ? Math.max((tgt - v * w) / (1 - w), mn) : 0;
+      const pass = ort >= tgt && fi >= mn;
+      H.big('Ders ortalaması', H.fmt(ort, 2));
+      H.ledger('out', [
+        { k: 'Vize katkısı', v: H.fmt(v * w, 2) },
+        { k: 'Final katkısı', v: H.fmt(fi * (1 - w), 2) },
+        { k: 'Durum', v: pass ? 'Geçti' : 'Kaldı' },
+        { sep: true },
+        { k: 'Geçmek için gereken final', v: need > 100 ? 'Ulaşılamaz' : H.fmt(need, 1), strong: true },
+      ]);
+      H.msg(need > 100 ? 'Bu vize notuyla finalden 100 alsan da hedef ortalamaya ulaşılamıyor.' : '');
+    });
+  })();</script>
+</body>
+</html>

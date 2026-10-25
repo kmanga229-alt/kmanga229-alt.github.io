@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kredi hesaplama: aylık taksit ve ödeme planı | Hesapça</title>
+<meta name="description" content="İhtiyaç, taşıt ve konut kredisi için aylık taksit, toplam faiz, KKDF ve BSMV ile ay ay ödeme planı hesaplayın.">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta property="og:title" content="Kredi hesaplama: aylık taksit ve ödeme planı | Hesapça">
+<meta property="og:description" content="İhtiyaç, taşıt ve konut kredisi için aylık taksit, toplam faiz, KKDF ve BSMV ile ay ay ödeme planı hesaplayın.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<link rel="canonical" href="https://hesapca.example/kredi-hesaplama.html">
+<link rel="stylesheet" href="style.css">
+<script>(function(){try{var t=localStorage.getItem('hc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"Kredi hesaplama: aylık taksit ve ödeme planı","description":"İhtiyaç, taşıt ve konut kredisi için aylık taksit, toplam faiz, KKDF ve BSMV ile ay ay ödeme planı hesaplayın.","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"tr","offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"KKDF ve BSMV nedir?","acceptedAnswer":{"@type":"Answer","text":"KKDF Kaynak Kullanımını Destekleme Fonu, BSMV Banka ve Sigorta Muameleleri Vergisi demektir. İkisi de faiz tutarı üzerinden alınır. Oranlar kredi türüne ve döneme göre değişir, bu yüzden alanları değiştirebilirsin."}},{"@type":"Question","name":"Vadeyi uzatmak iyi mi?","acceptedAnswer":{"@type":"Answer","text":"Vade uzadıkça taksit düşer ama toplam faiz artar. Aynı krediyi 12 ve 36 ay için hesaplayıp toplam geri ödemeyi karşılaştır."}},{"@type":"Question","name":"Erken kapatma hesabı yapar mı?","acceptedAnswer":{"@type":"Answer","text":"Hayır, bu araç düzenli ödeme planını gösterir. Erken kapatma için bankanın erken ödeme komisyonuna bakmalısın."}}]}]</script>
+</head>
+<body>
+<header class="top"><div class="wrap bar"><a class="brand" href="index.html"><span class="mark">₺</span>Hesapça</a><nav aria-label="Ana menü"><a href="index.html#araclar">Tüm araçlar</a><button class="iconbtn" id="themeBtn" type="button" aria-label="Açık veya koyu tema"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"></path></svg></button></nav></div></header>
+<main class="wrap">
+<nav class="crumb" aria-label="Sayfa yolu"><a href="index.html">Ana sayfa</a> › <a href="index.html#borc">Kredi ve borç</a></nav>
+<div class="head"><h1>Kredi hesaplama: aylık taksit ve ödeme planı</h1><p>Tutarı, vadeyi ve aylık faizi yaz. Taksiti, toplam geri ödemeyi, KKDF ve BSMV yükünü ve ay ay ödeme planını anında gör.</p></div>
+<div class="tool"><div><div class="card"><div class="field"><span class="lab" id="tur-l">Kredi türü</span><div class="seg" id="tur" role="radiogroup" aria-labelledby="tur-l" data-seg data-value="ihtiyac"><button type="button" role="radio" aria-checked="true" data-v="ihtiyac">İhtiyaç</button><button type="button" role="radio" aria-checked="false" data-v="tasit">Taşıt</button><button type="button" role="radio" aria-checked="false" data-v="konut">Konut</button></div></div>
+<div class="field"><label for="tutar">Kredi tutarı</label><div class="inp"><input id="tutar" type="text" inputmode="decimal" autocomplete="off" data-money="2" value="100.000"><span class="suf">₺</span></div></div>
+<div class="row2"><div class="field"><label for="vade">Vade</label><div class="inp"><input id="vade" type="text" inputmode="decimal" autocomplete="off" data-num value="24"><span class="suf">ay</span></div></div><div class="field"><label for="faiz">Aylık faiz</label><div class="inp"><input id="faiz" type="text" inputmode="decimal" autocomplete="off" data-num value="3,99"><span class="suf">%</span></div><small>Bankanın teklifindeki oran. Buradaki oran örnektir.</small></div></div>
+<div class="row2"><div class="field"><label for="kkdf">KKDF</label><div class="inp"><input id="kkdf" type="text" inputmode="decimal" autocomplete="off" data-num value="15"><span class="suf">%</span></div></div><div class="field"><label for="bsmv">BSMV</label><div class="inp"><input id="bsmv" type="text" inputmode="decimal" autocomplete="off" data-num value="15"><span class="suf">%</span></div><small>Konut kredisinde genellikle 0.</small></div></div></div></div><aside class="slip" aria-live="polite"><div class="slip-h">Hesap dökümü</div><div class="big"><span class="big-l" id="bigL"></span><output class="big-v" id="bigV"></output></div><div class="tear"></div><div class="ledger" id="out"></div><div class="viz" id="viz"></div><div class="msg" id="msg" role="status"></div><p class="slip-note">Eşit taksitli (annüite) ödeme varsayılır. Dosya masrafı, sigorta ve hayat sigortası eklenmemiştir. Bankanın kesin teklifi farklı olabilir.</p></aside></div>
+<div class="card" style="margin-top:22px"><h2>Ödeme planı</h2><div id="tbl"></div></div>
+<section class="prose"><h2>Kredi taksiti nasıl hesaplanır?</h2>
+<p>Eşit taksitli kredilerde her ay aynı tutarı ödersin. Taksit, aylık faizin vergilerle büyütülmüş haline göre bulunur. İhtiyaç ve taşıt kredilerinde faizin üzerine KKDF ve BSMV eklenir, konut kredisinde genellikle eklenmez.</p>
+<div class="formula">brüt faiz = aylık faiz × (1 + KKDF + BSMV)<br>taksit = anapara × r × (1+r)^n ÷ ((1+r)^n − 1)</div>
+<p>Örneğin %3,99 aylık faiz ve %15 KKDF, %15 BSMV ile brüt aylık oran %5,19 olur. Aynı faizle taksit, vergisiz hesaba göre belirgin biçimde yüksektir. Bu yüzden bankanın "faiz oranı" ile gerçek maliyet farklıdır.</p>
+<h2>Yıllık maliyet oranı</h2>
+<p>Sonuç panelindeki yıllık maliyet, vergili aylık oranın 12 ay bileşik hali olarak hesaplanır. Teklifleri karşılaştırırken aylık oranı değil bu rakamı ve toplam geri ödemeyi kıyasla.</p><h2>Sık sorulan sorular</h2><details><summary>KKDF ve BSMV nedir?</summary><p>KKDF Kaynak Kullanımını Destekleme Fonu, BSMV Banka ve Sigorta Muameleleri Vergisi demektir. İkisi de faiz tutarı üzerinden alınır. Oranlar kredi türüne ve döneme göre değişir, bu yüzden alanları değiştirebilirsin.</p></details><details><summary>Vadeyi uzatmak iyi mi?</summary><p>Vade uzadıkça taksit düşer ama toplam faiz artar. Aynı krediyi 12 ve 36 ay için hesaplayıp toplam geri ödemeyi karşılaştır.</p></details><details><summary>Erken kapatma hesabı yapar mı?</summary><p>Hayır, bu araç düzenli ödeme planını gösterir. Erken kapatma için bankanın erken ödeme komisyonuna bakmalısın.</p></details></section>
+<section class="related"><h2>Diğer hesaplayıcılar</h2><div class="grid"><a class="tool-card" href="kredi-karti-asgari-odeme.html" data-k="Kredi kartı asgari ödeme Sadece asgari ödeme yaparsan borcun kaç ayda biter, ne kadar faiz ödersin? kredi kartı asgari ödeme borç kapatma faiz akdi taksitlendirme"><span class="glyph" aria-hidden="true">%</span><span><h3>Kredi kartı asgari ödeme</h3><p>Sadece asgari ödeme yaparsan borcun kaç ayda biter, ne kadar faiz ödersin?</p></span></a><a class="tool-card" href="mevduat-faizi-hesaplama.html" data-k="Mevduat faizi hesaplama Vadeli hesabın brüt ve stopaj sonrası net getirisini gör. mevduat faiz getiri vadeli hesap stopaj net brüt banka"><span class="glyph" aria-hidden="true">↗</span><span><h3>Mevduat faizi hesaplama</h3><p>Vadeli hesabın brüt ve stopaj sonrası net getirisini gör.</p></span></a><a class="tool-card" href="kira-artis-hesaplama.html" data-k="Kira artış hesaplama Yeni dönem kirasını ve artış tutarını TÜFE oranıyla hesapla. kira artış oranı tüfe yeni kira ev sahibi kiracı yıllık artış"><span class="glyph" aria-hidden="true">⌂</span><span><h3>Kira artış hesaplama</h3><p>Yeni dönem kirasını ve artış tutarını TÜFE oranıyla hesapla.</p></span></a></div></section>
+</main>
+<footer class="wrap foot"><p><strong>Hesapça</strong>: sonuçlar tarayıcında hesaplanır, girdiğin rakamlar hiçbir yere gönderilmez.</p><p>Hesaplamalar bilgilendirme amaçlıdır ve bağlayıcı değildir; yatırım tavsiyesi içermez. Oranlar ve vergi dilimleri zamanla değişir. Karar vermeden önce bankandan veya resmi kaynaklardan doğrula.</p></footer>
+<script src="app.js"></script>
+<script>(() => {
+    const defs = { ihtiyac: ['3,99', '15', '15'], tasit: ['3,49', '15', '15'], konut: ['2,79', '0', '0'] };
+    H.$('tur').addEventListener('change', () => {
+      const d = defs[H.sv('tur')];
+      H.setVal('faiz', d[0]); H.setVal('kkdf', d[1]); H.setVal('bsmv', d[2]);
+    });
+    H.on(['tur', 'tutar', 'vade', 'faiz', 'kkdf', 'bsmv'], () => {
+      const P = H.val('tutar'), n = Math.max(1, Math.min(480, Math.round(H.val('vade'))));
+      const kk = H.val('kkdf') / 100, bs = H.val('bsmv') / 100;
+      const r = (H.val('faiz') / 100) * (1 + kk + bs);
+      const pmt = r > 0 ? (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1) : P / n;
+      const total = pmt * n, interest = total - P;
+      const base = interest / (1 + kk + bs), taxes = interest - base;
+      const eff = Math.pow(1 + r, 12) - 1;
+      H.big('Aylık taksit', H.tl(pmt));
+      H.ledger('out', [
+        { k: 'Kredi tutarı', v: H.tl(P) },
+        { k: 'Vade', v: n + ' ay' },
+        { k: 'Toplam faiz', v: H.tl(base) },
+        { k: 'KKDF + BSMV', v: H.tl(taxes) },
+        { k: 'Vergili aylık oran', v: H.pct(r * 100) },
+        { k: 'Yıllık maliyet oranı', v: H.pct(eff * 100, 1) },
+        { sep: true },
+        { k: 'Toplam geri ödeme', v: H.tl(total), strong: true },
+      ]);
+      H.donut('viz', [
+        { label: 'Anapara', value: P, color: 'var(--c1)' },
+        { label: 'Faiz', value: base, color: 'var(--c0)' },
+        { label: 'Vergi', value: taxes, color: 'var(--c2)' },
+      ]);
+      let bal = P;
+      const rows = [];
+      for (let i = 1; i <= n; i++) {
+        const it = bal * r, pr = pmt - it;
+        bal = Math.max(0, bal - pr);
+        rows.push([i, H.tl(pmt), H.tl(pr), H.tl(it), H.tl(i === n ? 0 : bal)]);
+      }
+      H.table('tbl', ['Taksit', 'Ödeme', 'Anapara', 'Faiz + vergi', 'Kalan borç'], rows);
+    });
+  })();</script>
+</body>
+</html>

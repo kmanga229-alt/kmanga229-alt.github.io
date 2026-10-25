@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Yüzde hesaplama | Hesapça</title>
+<meta name="description" content="Bir sayının yüzdesini bulma, iki sayı arasındaki yüzde değişimi, indirimli ve zamlı fiyat hesabı: altı yüzde hesaplayıcı tek sayfada.">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta property="og:title" content="Yüzde hesaplama | Hesapça">
+<meta property="og:description" content="Bir sayının yüzdesini bulma, iki sayı arasındaki yüzde değişimi, indirimli ve zamlı fiyat hesabı: altı yüzde hesaplayıcı tek sayfada.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<link rel="canonical" href="https://hesapca.example/yuzde-hesaplama.html">
+<link rel="stylesheet" href="style.css">
+<script>(function(){try{var t=localStorage.getItem('hc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"Yüzde hesaplama","description":"Bir sayının yüzdesini bulma, iki sayı arasındaki yüzde değişimi, indirimli ve zamlı fiyat hesabı: altı yüzde hesaplayıcı tek sayfada.","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"tr","offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Yüzde puan ile yüzde farkı aynı mı?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Faiz %30'dan %45'e çıkarsa 15 yüzde puan artmıştır, ama yüzde olarak %50 artmıştır."}}]}]</script>
+</head>
+<body>
+<header class="top"><div class="wrap bar"><a class="brand" href="index.html"><span class="mark">₺</span>Hesapça</a><nav aria-label="Ana menü"><a href="index.html#araclar">Tüm araçlar</a><button class="iconbtn" id="themeBtn" type="button" aria-label="Açık veya koyu tema"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"></path></svg></button></nav></div></header>
+<main class="wrap">
+<nav class="crumb" aria-label="Sayfa yolu"><a href="index.html">Ana sayfa</a> › <a href="index.html#gunluk">Günlük hesaplar</a></nav>
+<div class="head"><h1>Yüzde hesaplama</h1><p>Yüzdesini bul, yüzde farkı hesapla, indirimli ve zamlı fiyatı gör. Altı hesap bir arada, sonuç yazdıkça güncellenir.</p></div>
+<div class="pgrid">
+<div class="card pcard"><h2>X sayısının yüzde Y'si kaçtır?</h2><div class="row2"><div class="field"><label for="aa">Sayı (X)</label><div class="inp"><input id="aa" type="text" inputmode="decimal" autocomplete="off" data-num value="250"></div></div><div class="field"><label for="ab">Yüzde (Y)</label><div class="inp"><input id="ab" type="text" inputmode="decimal" autocomplete="off" data-num value="18"></div></div></div><div class="res" id="ar">–</div></div>
+<div class="card pcard"><h2>X, Y'nin yüzde kaçıdır?</h2><div class="row2"><div class="field"><label for="ba">Parça (X)</label><div class="inp"><input id="ba" type="text" inputmode="decimal" autocomplete="off" data-num value="45"></div></div><div class="field"><label for="bb">Bütün (Y)</label><div class="inp"><input id="bb" type="text" inputmode="decimal" autocomplete="off" data-num value="180"></div></div></div><div class="res" id="br">–</div></div>
+<div class="card pcard"><h2>X'ten Y'ye yüzde değişim</h2><div class="row2"><div class="field"><label for="ca">Eski değer (X)</label><div class="inp"><input id="ca" type="text" inputmode="decimal" autocomplete="off" data-num value="1200"></div></div><div class="field"><label for="cb">Yeni değer (Y)</label><div class="inp"><input id="cb" type="text" inputmode="decimal" autocomplete="off" data-num value="1500"></div></div></div><div class="res" id="cr">–</div></div>
+<div class="card pcard"><h2>X sayısına yüzde Y ekle (zam)</h2><div class="row2"><div class="field"><label for="da">Sayı (X)</label><div class="inp"><input id="da" type="text" inputmode="decimal" autocomplete="off" data-num value="800"></div></div><div class="field"><label for="db">Yüzde (Y)</label><div class="inp"><input id="db" type="text" inputmode="decimal" autocomplete="off" data-num value="25"></div></div></div><div class="res" id="dr">–</div></div>
+<div class="card pcard"><h2>X sayısından yüzde Y çıkar (indirim)</h2><div class="row2"><div class="field"><label for="ea">Sayı (X)</label><div class="inp"><input id="ea" type="text" inputmode="decimal" autocomplete="off" data-num value="800"></div></div><div class="field"><label for="eb">Yüzde (Y)</label><div class="inp"><input id="eb" type="text" inputmode="decimal" autocomplete="off" data-num value="25"></div></div></div><div class="res" id="er">–</div></div>
+<div class="card pcard"><h2>Y yüzde ekleyince X olan sayı kaçtı?</h2><div class="row2"><div class="field"><label for="fa">Son değer (X)</label><div class="inp"><input id="fa" type="text" inputmode="decimal" autocomplete="off" data-num value="1000"></div></div><div class="field"><label for="fb">Eklenen yüzde (Y)</label><div class="inp"><input id="fb" type="text" inputmode="decimal" autocomplete="off" data-num value="25"></div></div></div><small style="color:var(--muted)">Zamdan önceki fiyatı bulmak için.</small><div class="res" id="fr">–</div></div>
+</div>
+
+<section class="prose"><h2>Yüzde nasıl hesaplanır?</h2>
+<p>Yüzde, bir sayının 100'de kaçı olduğunu gösterir. Ondalık olarak yazarsan hesap kolaylaşır: %18 = 0,18.</p>
+<div class="formula">X'in %Y'si = X × Y ÷ 100<br>X, Y'nin yüzde kaçı = X ÷ Y × 100<br>değişim % = (yeni − eski) ÷ eski × 100<br>zam = X × (1 + Y ÷ 100)<br>indirim = X × (1 − Y ÷ 100)</div>
+<h2>Sık yapılan hata</h2>
+<p>%25 zam yapılan bir fiyatı %25 indirimle eski haline getiremezsin. 100 ₺ → 125 ₺ olur, 125 ₺'den %25 indirim 93,75 ₺ eder. Zamdan önceki fiyatı bulmak için son değeri 1 + oran'a böl: 125 ÷ 1,25 = 100.</p><h2>Sık sorulan sorular</h2><details><summary>Yüzde puan ile yüzde farkı aynı mı?</summary><p>Hayır. Faiz %30'dan %45'e çıkarsa 15 yüzde puan artmıştır, ama yüzde olarak %50 artmıştır.</p></details></section>
+<section class="related"><h2>Diğer hesaplayıcılar</h2><div class="grid"><a class="tool-card" href="kdv-hesaplama.html" data-k="KDV hesaplama KDV dahil ve hariç tutarı bir adımda hesapla. kdv hesaplama dahil hariç yüzde 20 yüzde 10 yüzde 1 katma değer vergisi fatura"><span class="glyph" aria-hidden="true">K</span><span><h3>KDV hesaplama</h3><p>KDV dahil ve hariç tutarı bir adımda hesapla.</p></span></a><a class="tool-card" href="enflasyon-hesaplama.html" data-k="Enflasyon ve alım gücü Paranın yıllar içinde ne kadar değer kaybettiğini hesapla. enflasyon alım gücü değer kaybı tüfe satın alma gücü fiyat artışı"><span class="glyph" aria-hidden="true">↘</span><span><h3>Enflasyon ve alım gücü</h3><p>Paranın yıllar içinde ne kadar değer kaybettiğini hesapla.</p></span></a><a class="tool-card" href="kira-artis-hesaplama.html" data-k="Kira artış hesaplama Yeni dönem kirasını ve artış tutarını TÜFE oranıyla hesapla. kira artış oranı tüfe yeni kira ev sahibi kiracı yıllık artış"><span class="glyph" aria-hidden="true">⌂</span><span><h3>Kira artış hesaplama</h3><p>Yeni dönem kirasını ve artış tutarını TÜFE oranıyla hesapla.</p></span></a></div></section>
+</main>
+<footer class="wrap foot"><p><strong>Hesapça</strong>: sonuçlar tarayıcında hesaplanır, girdiğin rakamlar hiçbir yere gönderilmez.</p><p>Hesaplamalar bilgilendirme amaçlıdır ve bağlayıcı değildir; yatırım tavsiyesi içermez. Oranlar ve vergi dilimleri zamanla değişir. Karar vermeden önce bankandan veya resmi kaynaklardan doğrula.</p></footer>
+<script src="app.js"></script>
+<script>(() => {
+    const out = (id, t) => { H.$(id + 'r').textContent = t; };
+    const n = (x, d) => H.fmt(x, d === undefined ? 2 : d);
+    const run = () => {
+      let a = H.val('aa'), b = H.val('ab'); out('a', n(a * b / 100));
+      a = H.val('ba'); b = H.val('bb'); out('b', b ? '%' + n(a / b * 100) : '–');
+      a = H.val('ca'); b = H.val('cb'); out('c', a ? (b >= a ? '+' : '') + '%' + n((b - a) / a * 100) : '–');
+      a = H.val('da'); b = H.val('db'); out('d', n(a * (1 + b / 100)));
+      a = H.val('ea'); b = H.val('eb'); out('e', n(a * (1 - b / 100)));
+      a = H.val('fa'); b = H.val('fb'); out('f', n(a / (1 + b / 100)));
+    };
+    H.on(['aa', 'ab', 'ba', 'bb', 'ca', 'cb', 'da', 'db', 'ea', 'eb', 'fa', 'fb'], run);
+  })();</script>
+</body>
+</html>

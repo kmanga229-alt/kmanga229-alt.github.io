@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Enflasyon ve alım gücü kaybı hesaplama | Hesapça</title>
+<meta name="description" content="Enflasyon oranına göre paranın gelecekteki alım gücünü ve aynı alım gücü için gereken tutarı hesaplayın.">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta property="og:title" content="Enflasyon ve alım gücü kaybı hesaplama | Hesapça">
+<meta property="og:description" content="Enflasyon oranına göre paranın gelecekteki alım gücünü ve aynı alım gücü için gereken tutarı hesaplayın.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<link rel="canonical" href="https://hesapca.example/enflasyon-hesaplama.html">
+<link rel="stylesheet" href="style.css">
+<script>(function(){try{var t=localStorage.getItem('hc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"Enflasyon ve alım gücü kaybı hesaplama","description":"Enflasyon oranına göre paranın gelecekteki alım gücünü ve aynı alım gücü için gereken tutarı hesaplayın.","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"tr","offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Alım gücü kaybı yatırımı nasıl etkiler?","acceptedAnswer":{"@type":"Answer","text":"Getirin enflasyonun altındaysa reel olarak kaybedersin. Kazanç değerlendirirken nominal getiriyi değil reel getiriyi karşılaştır."}}]}]</script>
+</head>
+<body>
+<header class="top"><div class="wrap bar"><a class="brand" href="index.html"><span class="mark">₺</span>Hesapça</a><nav aria-label="Ana menü"><a href="index.html#araclar">Tüm araçlar</a><button class="iconbtn" id="themeBtn" type="button" aria-label="Açık veya koyu tema"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"></path></svg></button></nav></div></header>
+<main class="wrap">
+<nav class="crumb" aria-label="Sayfa yolu"><a href="index.html">Ana sayfa</a> › <a href="index.html#yatirim">Tasarruf ve yatırım</a></nav>
+<div class="head"><h1>Enflasyon ve alım gücü kaybı hesaplama</h1><p>Bugünkü tutarını ve beklediğin yıllık enflasyonu yaz. Yıllar sonra paranın alım gücünü ve aynı gücü korumak için gereken tutarı gör.</p></div>
+<div class="tool"><div><div class="card"><div class="field"><label for="tutar">Bugünkü tutar</label><div class="inp"><input id="tutar" type="text" inputmode="decimal" autocomplete="off" data-money="2" value="100.000"><span class="suf">₺</span></div></div>
+<div class="row2"><div class="field"><label for="enf">Yıllık enflasyon</label><div class="inp"><input id="enf" type="text" inputmode="decimal" autocomplete="off" data-num value="30"><span class="suf">%</span></div><small>Beklentin veya TÜİK TÜFE oranı.</small></div><div class="field"><label for="yil">Süre</label><div class="inp"><input id="yil" type="text" inputmode="decimal" autocomplete="off" data-num value="5"><span class="suf">yıl</span></div></div></div></div></div><aside class="slip" aria-live="polite"><div class="slip-h">Hesap dökümü</div><div class="big"><span class="big-l" id="bigL"></span><output class="big-v" id="bigV"></output></div><div class="tear"></div><div class="ledger" id="out"></div><div class="viz" id="viz"></div><div class="msg" id="msg" role="status"></div><p class="slip-note">Sabit yıllık enflasyon varsayılır. Gerçekte oran her yıl değişir. Resmi oranlar için TÜİK verisine bak.</p></aside></div>
+
+<section class="prose"><h2>Alım gücü nasıl hesaplanır?</h2>
+<p>Enflasyon fiyatları yükselttiğinde aynı parayla daha az mal alırsın. İki soru sorulur: bugünkü paranın gelecekte ne kadar alım gücü kalır, ve bugünkü alım gücünü korumak için gelecekte kaç lira gerekir.</p>
+<div class="formula">gelecekteki alım gücü = tutar ÷ (1 + enflasyon)^yıl<br>aynı güç için gereken tutar = tutar × (1 + enflasyon)^yıl</div>
+<h2>Aylık enflasyon yıllığa nasıl çevrilir?</h2>
+<p>Aylık enflasyon sabit kalırsa yıllık karşılığı (1 + aylık)^12 − 1 olur. %2,5 aylık oran yıllık yaklaşık %34,5 eder.</p><h2>Sık sorulan sorular</h2><details><summary>Alım gücü kaybı yatırımı nasıl etkiler?</summary><p>Getirin enflasyonun altındaysa reel olarak kaybedersin. Kazanç değerlendirirken nominal getiriyi değil reel getiriyi karşılaştır.</p></details></section>
+<section class="related"><h2>Diğer hesaplayıcılar</h2><div class="grid"><a class="tool-card" href="birikim-hesaplama.html" data-k="Birikim ve bileşik getiri Düzenli yatırımın yıllar içinde nereye varacağını ve reel değerini gör. birikim bileşik faiz yatırım getiri aylık ekleme reel enflasyon fon"><span class="glyph" aria-hidden="true">∑</span><span><h3>Birikim ve bileşik getiri</h3><p>Düzenli yatırımın yıllar içinde nereye varacağını ve reel değerini gör.</p></span></a><a class="tool-card" href="mevduat-faizi-hesaplama.html" data-k="Mevduat faizi hesaplama Vadeli hesabın brüt ve stopaj sonrası net getirisini gör. mevduat faiz getiri vadeli hesap stopaj net brüt banka"><span class="glyph" aria-hidden="true">↗</span><span><h3>Mevduat faizi hesaplama</h3><p>Vadeli hesabın brüt ve stopaj sonrası net getirisini gör.</p></span></a><a class="tool-card" href="kira-artis-hesaplama.html" data-k="Kira artış hesaplama Yeni dönem kirasını ve artış tutarını TÜFE oranıyla hesapla. kira artış oranı tüfe yeni kira ev sahibi kiracı yıllık artış"><span class="glyph" aria-hidden="true">⌂</span><span><h3>Kira artış hesaplama</h3><p>Yeni dönem kirasını ve artış tutarını TÜFE oranıyla hesapla.</p></span></a></div></section>
+</main>
+<footer class="wrap foot"><p><strong>Hesapça</strong>: sonuçlar tarayıcında hesaplanır, girdiğin rakamlar hiçbir yere gönderilmez.</p><p>Hesaplamalar bilgilendirme amaçlıdır ve bağlayıcı değildir; yatırım tavsiyesi içermez. Oranlar ve vergi dilimleri zamanla değişir. Karar vermeden önce bankandan veya resmi kaynaklardan doğrula.</p></footer>
+<script src="app.js"></script>
+<script>(() => {
+    H.on(['tutar', 'enf', 'yil'], () => {
+      const P = H.val('tutar'), e = H.val('enf') / 100, y = Math.max(1, Math.min(50, Math.round(H.val('yil'))));
+      const power = P / Math.pow(1 + e, y), need = P * Math.pow(1 + e, y);
+      H.big('Bugünkü gücün ' + y + ' yıl sonra', H.tl(power, 0));
+      H.ledger('out', [
+        { k: 'Bugünkü tutar', v: H.tl(P, 0) },
+        { k: 'Değer kaybı', v: H.pct((1 - 1 / Math.pow(1 + e, y)) * 100, 1) },
+        { k: 'Kaybolan alım gücü', v: H.tl(P - power, 0) },
+        { sep: true },
+        { k: 'Aynı güç için gereken', v: H.tl(need, 0), strong: true },
+        { k: 'Aylık eşdeğer enflasyon', v: H.pct((Math.pow(1 + e, 1 / 12) - 1) * 100, 2) },
+      ]);
+      const labels = [], vals = [];
+      for (let i = 0; i <= y; i++) { labels.push(String(i)); vals.push(P / Math.pow(1 + e, i)); }
+      H.bars('viz', labels, [{ name: 'Bugünkü paranın alım gücü (yıl)', values: vals, color: 'var(--c0)' }], { label: 'Alım gücü', legend: true });
+    });
+  })();</script>
+</body>
+</html>

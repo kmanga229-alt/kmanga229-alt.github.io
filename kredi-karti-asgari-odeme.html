@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kredi kartı asgari ödeme hesaplama | Hesapça</title>
+<meta name="description" content="Kredi kartı dönem borcu için asgari ödeme tutarını ve sadece asgari ödeme yapılırsa borcun kaç ayda biteceğini, toplam faizi hesaplayın.">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta property="og:title" content="Kredi kartı asgari ödeme hesaplama | Hesapça">
+<meta property="og:description" content="Kredi kartı dönem borcu için asgari ödeme tutarını ve sadece asgari ödeme yapılırsa borcun kaç ayda biteceğini, toplam faizi hesaplayın.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<link rel="canonical" href="https://hesapca.example/kredi-karti-asgari-odeme.html">
+<link rel="stylesheet" href="style.css">
+<script>(function(){try{var t=localStorage.getItem('hc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"Kredi kartı asgari ödeme hesaplama","description":"Kredi kartı dönem borcu için asgari ödeme tutarını ve sadece asgari ödeme yapılırsa borcun kaç ayda biteceğini, toplam faizi hesaplayın.","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"tr","offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Azami faiz oranları nerede açıklanır?","acceptedAnswer":{"@type":"Answer","text":"Türkiye Cumhuriyet Merkez Bankası kredi kartı işlemlerinde uygulanacak azami faiz oranlarını duyurur. Oranlar dönem borcuna göre kademelidir ve politika faizi değiştikçe güncellenir."}},{"@type":"Question","name":"Asgari ödemeyi ödemezsem ne olur?","acceptedAnswer":{"@type":"Answer","text":"Gecikme faizi işler ve kartın kullanıma kapatılabilir. Gecikme faizi akdi faizden yüksektir. Gecikme faizi için kredi kartı faiz hesaplayıcıyı kullan."}}]}]</script>
+</head>
+<body>
+<header class="top"><div class="wrap bar"><a class="brand" href="index.html"><span class="mark">₺</span>Hesapça</a><nav aria-label="Ana menü"><a href="index.html#araclar">Tüm araçlar</a><button class="iconbtn" id="themeBtn" type="button" aria-label="Açık veya koyu tema"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"></path></svg></button></nav></div></header>
+<main class="wrap">
+<nav class="crumb" aria-label="Sayfa yolu"><a href="index.html">Ana sayfa</a> › <a href="index.html#borc">Kredi ve borç</a></nav>
+<div class="head"><h1>Kredi kartı asgari ödeme hesaplama</h1><p>Dönem borcunu yaz. Asgari ödeme tutarını, her ay yalnızca asgari ödersen borcun bitiş süresini ve toplam faizi gör.</p></div>
+<div class="tool"><div><div class="card"><div class="field"><label for="borc">Dönem borcu</label><div class="inp"><input id="borc" type="text" inputmode="decimal" autocomplete="off" data-money="2" value="25.000"><span class="suf">₺</span></div></div>
+<div class="field"><span class="lab" id="limit-l">Kart limiti</span><div class="seg" id="limit" role="radiogroup" aria-labelledby="limit-l" data-seg data-value="20"><button type="button" role="radio" aria-checked="true" data-v="20">100.000 ₺ ve altı</button><button type="button" role="radio" aria-checked="false" data-v="40">100.000 ₺ üstü</button></div></div>
+<div class="row2"><div class="field"><label for="faiz">Aylık akdi faiz</label><div class="inp"><input id="faiz" type="text" inputmode="decimal" autocomplete="off" data-num value="3,25"><span class="suf">%</span></div><small>Dönem borcuna göre TCMB azami oranı.</small></div><div class="field"><label for="vergi">Vergi yükü</label><div class="inp"><input id="vergi" type="text" inputmode="decimal" autocomplete="off" data-num value="30"><span class="suf">%</span></div><small>KKDF + BSMV</small></div></div>
+<div class="field"><label for="ay">Karşılaştırma için sabit taksit süresi</label><div class="inp"><input id="ay" type="text" inputmode="decimal" autocomplete="off" data-num value="12"><span class="suf">ay</span></div></div></div></div><aside class="slip" aria-live="polite"><div class="slip-h">Hesap dökümü</div><div class="big"><span class="big-l" id="bigL"></span><output class="big-v" id="bigV"></output></div><div class="tear"></div><div class="ledger" id="out"></div><div class="viz" id="viz"></div><div class="msg" id="msg" role="status"></div><p class="slip-note">Asgari ödeme oranı kart limitine göre %20 veya %40 alınmıştır. Bankan daha yüksek oran uygulayabilir. Yeni harcama yapılmadığı varsayılır.</p></aside></div>
+
+<section class="prose"><h2>Asgari ödeme nasıl hesaplanır?</h2>
+<p>Asgari ödeme, dönem borcunun belirli bir yüzdesidir. BDDK kararına göre kart limiti 100.000 ₺ ve altındaysa oran %20, üstündeyse %40'tır. Bankalar daha yüksek oran isteyebilir.</p>
+<p>Asgari ödeme yaptığında kalan borca akdi faiz işler. Faiz ve vergiler bir sonraki borca eklenir. Borç her ay küçülse de faiz yüzünden bitmesi uzun sürer.</p>
+<div class="formula">asgari ödeme = borç × oran<br>kalan borç = (borç − ödeme) × (1 + aylık faiz × (1 + vergi))</div>
+<h2>Sabit taksitle kapatmak</h2>
+<p>Aynı borcu belirli ayda eşit parçalarla kapatmak toplam faizi genellikle düşürür. Sonuç panelinde asgari ödeme yolu ile sabit taksit yolunun farkını görürsün.</p><h2>Sık sorulan sorular</h2><details><summary>Azami faiz oranları nerede açıklanır?</summary><p>Türkiye Cumhuriyet Merkez Bankası kredi kartı işlemlerinde uygulanacak azami faiz oranlarını duyurur. Oranlar dönem borcuna göre kademelidir ve politika faizi değiştikçe güncellenir.</p></details><details><summary>Asgari ödemeyi ödemezsem ne olur?</summary><p>Gecikme faizi işler ve kartın kullanıma kapatılabilir. Gecikme faizi akdi faizden yüksektir. Gecikme faizi için kredi kartı faiz hesaplayıcıyı kullan.</p></details></section>
+<section class="related"><h2>Diğer hesaplayıcılar</h2><div class="grid"><a class="tool-card" href="kredi-karti-faiz-hesaplama.html" data-k="Kredi kartı faiz hesaplama Akdi ve gecikme faizini gün sayısına göre hesapla. kredi kartı gecikme faizi akdi faiz günlük faiz borç"><span class="glyph" aria-hidden="true">‰</span><span><h3>Kredi kartı faiz hesaplama</h3><p>Akdi ve gecikme faizini gün sayısına göre hesapla.</p></span></a><a class="tool-card" href="kredi-hesaplama.html" data-k="Kredi hesaplama İhtiyaç, taşıt ve konut kredisi taksiti, toplam faiz ve ödeme planı. taksit faiz ihtiyaç taşıt konut kredi amortisman ödeme planı kkdf bsmv"><span class="glyph" aria-hidden="true">₺</span><span><h3>Kredi hesaplama</h3><p>İhtiyaç, taşıt ve konut kredisi taksiti, toplam faiz ve ödeme planı.</p></span></a><a class="tool-card" href="enflasyon-hesaplama.html" data-k="Enflasyon ve alım gücü Paranın yıllar içinde ne kadar değer kaybettiğini hesapla. enflasyon alım gücü değer kaybı tüfe satın alma gücü fiyat artışı"><span class="glyph" aria-hidden="true">↘</span><span><h3>Enflasyon ve alım gücü</h3><p>Paranın yıllar içinde ne kadar değer kaybettiğini hesapla.</p></span></a></div></section>
+</main>
+<footer class="wrap foot"><p><strong>Hesapça</strong>: sonuçlar tarayıcında hesaplanır, girdiğin rakamlar hiçbir yere gönderilmez.</p><p>Hesaplamalar bilgilendirme amaçlıdır ve bağlayıcı değildir; yatırım tavsiyesi içermez. Oranlar ve vergi dilimleri zamanla değişir. Karar vermeden önce bankandan veya resmi kaynaklardan doğrula.</p></footer>
+<script src="app.js"></script>
+<script>(() => {
+    const tier = (b) => (b < 30000 ? '3,25' : b <= 180000 ? '3,75' : '4,25');
+    let dirty = false;
+    H.$('faiz').addEventListener('input', () => { dirty = true; });
+    H.on(['borc', 'limit', 'faiz', 'vergi', 'ay'], () => {
+      const B = H.val('borc');
+      if (!dirty) H.setVal('faiz', tier(B));
+      const rate = Number(H.sv('limit')) / 100;
+      const m = (H.val('faiz') / 100) * (1 + H.val('vergi') / 100);
+      const asgari = B * rate;
+      let bal = B, paid = 0, months = 0;
+      const hist = [B];
+      while (bal > 1 && months < 600) {
+        const pay = Math.min(bal, bal * rate);
+        bal = (bal - pay) * (1 + m);
+        paid += pay;
+        months++;
+        hist.push(bal);
+      }
+      const n = Math.max(1, Math.round(H.val('ay')));
+      const pmt = m > 0 ? (B * m * Math.pow(1 + m, n)) / (Math.pow(1 + m, n) - 1) : B / n;
+      const capped = months >= 600;
+      H.big('Bu ayki asgari ödeme', H.tl(asgari));
+      H.ledger('out', [
+        { k: 'Dönem borcu', v: H.tl(B) },
+        { k: 'Asgari ödeme oranı', v: H.pct(rate * 100, 0) },
+        { sep: true },
+        { k: 'Sadece asgari ödersen', v: capped ? '50+ yıl' : months + ' ay' },
+        { k: 'Toplam ödeme', v: capped ? '–' : H.tl(paid + bal) },
+        { k: 'Toplam faiz ve vergi', v: capped ? '–' : H.tl(paid + bal - B) },
+        { sep: true },
+        { k: n + ' ay sabit taksit', v: H.tl(pmt) },
+        { k: 'Toplam ödeme', v: H.tl(pmt * n) },
+        { k: 'Toplam faiz ve vergi', v: H.tl(pmt * n - B), strong: true },
+      ]);
+      const step = Math.max(1, Math.ceil(hist.length / 36));
+      const labels = [], vals = [];
+      hist.forEach((v, i) => { if (i % step === 0) { labels.push(String(i)); vals.push(v); } });
+      H.bars('viz', labels, [{ name: 'Kalan borç (ay)', values: vals, color: 'var(--c0)' }], { label: 'Kalan borç', legend: true });
+    });
+  })();</script>
+</body>
+</html>

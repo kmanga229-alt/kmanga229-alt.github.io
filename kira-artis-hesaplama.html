@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kira artış hesaplama | Hesapça</title>
+<meta name="description" content="Kira artış oranına göre yeni dönem kirasını, aylık fark ve yıllık ek maliyeti hesaplayın.">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta property="og:title" content="Kira artış hesaplama | Hesapça">
+<meta property="og:description" content="Kira artış oranına göre yeni dönem kirasını, aylık fark ve yıllık ek maliyeti hesaplayın.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<link rel="canonical" href="https://hesapca.example/kira-artis-hesaplama.html">
+<link rel="stylesheet" href="style.css">
+<script>(function(){try{var t=localStorage.getItem('hc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"Kira artış hesaplama","description":"Kira artış oranına göre yeni dönem kirasını, aylık fark ve yıllık ek maliyeti hesaplayın.","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"tr","offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Artış oranı olarak hangisini yazmalıyım?","acceptedAnswer":{"@type":"Answer","text":"Sözleşmede bir oran belirlenmişse onu, yoksa TÜİK'in kira yenileme ayından bir önceki ay açıkladığı 12 aylık TÜFE ortalamasını yaz."}}]}]</script>
+</head>
+<body>
+<header class="top"><div class="wrap bar"><a class="brand" href="index.html"><span class="mark">₺</span>Hesapça</a><nav aria-label="Ana menü"><a href="index.html#araclar">Tüm araçlar</a><button class="iconbtn" id="themeBtn" type="button" aria-label="Açık veya koyu tema"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"></path></svg></button></nav></div></header>
+<main class="wrap">
+<nav class="crumb" aria-label="Sayfa yolu"><a href="index.html">Ana sayfa</a> › <a href="index.html#maas">Maaş ve vergi</a></nav>
+<div class="head"><h1>Kira artış hesaplama</h1><p>Mevcut kirayı ve artış oranını yaz. Yeni kirayı, aylık farkı ve yıllık ek maliyeti gör.</p></div>
+<div class="tool"><div><div class="card"><div class="field"><label for="kira">Mevcut aylık kira</label><div class="inp"><input id="kira" type="text" inputmode="decimal" autocomplete="off" data-money="2" value="20.000"><span class="suf">₺</span></div></div>
+<div class="field"><label for="oran">Artış oranı</label><div class="inp"><input id="oran" type="text" inputmode="decimal" autocomplete="off" data-num value="33"><span class="suf">%</span></div><small>Sözleşmede yazan oran, ya da TÜİK'in açıkladığı 12 aylık TÜFE ortalaması.</small></div>
+<div class="field"><label for="yil">Kaç yıl ilerisi gösterilsin</label><div class="inp"><input id="yil" type="text" inputmode="decimal" autocomplete="off" data-num value="3"><span class="suf">yıl</span></div></div></div></div><aside class="slip" aria-live="polite"><div class="slip-h">Hesap dökümü</div><div class="big"><span class="big-l" id="bigL"></span><output class="big-v" id="bigV"></output></div><div class="tear"></div><div class="ledger" id="out"></div><div class="viz" id="viz"></div><div class="msg" id="msg" role="status"></div><p class="slip-note">Konut kiralarında yeni dönem artışı yasal olarak önceki 12 ayın TÜFE ortalamasını aşamaz. Güncel oran için TÜİK açıklamasına bak. Bu araç hukuki danışmanlık değildir.</p></aside></div>
+
+<section class="prose"><h2>Kira artışı nasıl hesaplanır?</h2>
+<p>Yeni kira, mevcut kiranın artış oranı kadar büyütülmüş halidir. Konut kirasında yasal üst sınır, kira dönemini izleyen yenileme tarihinden önceki 12 ayın TÜFE ortalamasıdır.</p>
+<div class="formula">yeni kira = mevcut kira × (1 + oran)</div>
+<p>Aynı oran birkaç yıl üst üste uygulanırsa kira bileşik büyür. Aşağıdaki sonuç panelinde seçtiğin yıl sayısı kadar ileriye bakabilirsin.</p><h2>Sık sorulan sorular</h2><details><summary>Artış oranı olarak hangisini yazmalıyım?</summary><p>Sözleşmede bir oran belirlenmişse onu, yoksa TÜİK'in kira yenileme ayından bir önceki ay açıkladığı 12 aylık TÜFE ortalamasını yaz.</p></details></section>
+<section class="related"><h2>Diğer hesaplayıcılar</h2><div class="grid"><a class="tool-card" href="enflasyon-hesaplama.html" data-k="Enflasyon ve alım gücü Paranın yıllar içinde ne kadar değer kaybettiğini hesapla. enflasyon alım gücü değer kaybı tüfe satın alma gücü fiyat artışı"><span class="glyph" aria-hidden="true">↘</span><span><h3>Enflasyon ve alım gücü</h3><p>Paranın yıllar içinde ne kadar değer kaybettiğini hesapla.</p></span></a><a class="tool-card" href="kdv-hesaplama.html" data-k="KDV hesaplama KDV dahil ve hariç tutarı bir adımda hesapla. kdv hesaplama dahil hariç yüzde 20 yüzde 10 yüzde 1 katma değer vergisi fatura"><span class="glyph" aria-hidden="true">K</span><span><h3>KDV hesaplama</h3><p>KDV dahil ve hariç tutarı bir adımda hesapla.</p></span></a><a class="tool-card" href="yuzde-hesaplama.html" data-k="Yüzde hesaplama Yüzde bulma, yüzde fark, indirim ve artış için altı hızlı hesap. yüzde hesaplama yüzde kaç indirim zam artış oran yüzde fark"><span class="glyph" aria-hidden="true">%</span><span><h3>Yüzde hesaplama</h3><p>Yüzde bulma, yüzde fark, indirim ve artış için altı hızlı hesap.</p></span></a></div></section>
+</main>
+<footer class="wrap foot"><p><strong>Hesapça</strong>: sonuçlar tarayıcında hesaplanır, girdiğin rakamlar hiçbir yere gönderilmez.</p><p>Hesaplamalar bilgilendirme amaçlıdır ve bağlayıcı değildir; yatırım tavsiyesi içermez. Oranlar ve vergi dilimleri zamanla değişir. Karar vermeden önce bankandan veya resmi kaynaklardan doğrula.</p></footer>
+<script src="app.js"></script>
+<script>(() => {
+    H.on(['kira', 'oran', 'yil'], () => {
+      const k = H.val('kira'), r = H.val('oran') / 100, y = Math.max(1, Math.min(20, Math.round(H.val('yil'))));
+      const nk = k * (1 + r);
+      H.big('Yeni aylık kira', H.tl(nk));
+      const fut = k * Math.pow(1 + r, y);
+      H.ledger('out', [
+        { k: 'Mevcut kira', v: H.tl(k) },
+        { k: 'Aylık artış', v: H.tl(nk - k) },
+        { k: 'Yıllık ek maliyet', v: H.tl((nk - k) * 12) },
+        { sep: true },
+        { k: y + ' yıl sonra kira (aynı oranla)', v: H.tl(fut), strong: true },
+      ]);
+      const labels = ['Bugün'], vals = [k];
+      for (let i = 1; i <= y; i++) { labels.push(i + '. yıl'); vals.push(k * Math.pow(1 + r, i)); }
+      H.bars('viz', labels, [{ name: 'Aylık kira', values: vals, color: 'var(--c0)' }], { label: 'Kira projeksiyonu', legend: true });
+    });
+  })();</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GANO ve dönem not ortalaması hesaplama | Hesapça</title>
+<meta name="description" content="Üniversite 4,00 sistemine göre ders kredisi ve harf notlarından dönem ve genel not ortalamasını hesaplayın.">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta property="og:title" content="GANO ve dönem not ortalaması hesaplama | Hesapça">
+<meta property="og:description" content="Üniversite 4,00 sistemine göre ders kredisi ve harf notlarından dönem ve genel not ortalamasını hesaplayın.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<link rel="canonical" href="https://hesapca.example/gano-hesaplama.html">
+<link rel="stylesheet" href="style.css">
+<script>(function(){try{var t=localStorage.getItem('hc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"GANO ve dönem not ortalaması hesaplama","description":"Üniversite 4,00 sistemine göre ders kredisi ve harf notlarından dönem ve genel not ortalamasını hesaplayın.","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"tr","offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"GANO ile DNO farkı nedir?","acceptedAnswer":{"@type":"Answer","text":"DNO yalnızca bu dönemin ortalamasıdır. GANO ise bölümdeki tüm dönemleri içeren genel ağırlıklı ortalamadır."}},{"@type":"Question","name":"Başarısız dersler hesaba girer mi?","acceptedAnswer":{"@type":"Answer","text":"FF notu 0,00 katsayıyla ortalamaya girer ve düşürür. Bazı üniversiteler dersi tekrar alınca eski notu siler, bu araç otomatik silmez."}}]}]</script>
+</head>
+<body>
+<header class="top"><div class="wrap bar"><a class="brand" href="index.html"><span class="mark">₺</span>Hesapça</a><nav aria-label="Ana menü"><a href="index.html#araclar">Tüm araçlar</a><button class="iconbtn" id="themeBtn" type="button" aria-label="Açık veya koyu tema"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"></path></svg></button></nav></div></header>
+<main class="wrap">
+<nav class="crumb" aria-label="Sayfa yolu"><a href="index.html">Ana sayfa</a> › <a href="index.html#egitim">Eğitim</a></nav>
+<div class="head"><h1>GANO ve dönem not ortalaması hesaplama</h1><p>Derslerini, kredilerini ve harf notlarını gir. Dönem ortalamanı (DNO) ve önceki dönemlerle birlikte genel ortalamanı (GANO) gör.</p></div>
+<div class="tool"><div><div class="card"><h2>Bu dönemin dersleri</h2><div id="rows"></div><button class="btn" id="add" type="button">+ Ders ekle</button></div>
+<div class="card"><h2>Önceki dönemler (isteğe bağlı)</h2><div class="row2"><div class="field"><label for="pg">Önceki GANO</label><div class="inp"><input id="pg" type="text" inputmode="decimal" autocomplete="off" data-num value="2,80"><span class="suf">/ 4</span></div></div><div class="field"><label for="pk">Tamamlanan toplam kredi</label><div class="inp"><input id="pk" type="text" inputmode="decimal" autocomplete="off" data-num value="60"></div></div></div></div></div>
+<aside class="slip" aria-live="polite"><div class="slip-h">Hesap dökümü</div><div class="big"><span class="big-l" id="bigL"></span><output class="big-v" id="bigV"></output></div><div class="tear"></div><div class="ledger" id="out"></div><div class="viz" id="viz"></div><div class="msg" id="msg" role="status"></div><p class="slip-note">4,00 üzerinden hesaplanır. Üniversitenin harf notu katsayıları farklıysa sonuç değişebilir. AKTS yerine kredi veya AKTS değerini aynı şekilde kullanabilirsin.</p></aside></div>
+
+<section class="prose"><h2>GANO nasıl hesaplanır?</h2>
+<p>Her dersin katsayısı harf notunun 4,00 sistemindeki karşılığıdır. Dönem ortalaması (DNO), katsayı × kredi toplamının toplam krediye bölünmesidir. Genel ortalama (GANO) önceki dönemleri de katar.</p>
+<div class="formula">DNO = Σ(katsayı × kredi) ÷ Σ kredi<br>GANO = (önceki GANO × önceki kredi + dönem puanı) ÷ toplam kredi</div>
+<h2>Harf notu katsayıları</h2>
+<p>AA 4,00, BA 3,50, BB 3,00, CB 2,50, CC 2,00, DC 1,50, DD 1,00, FD 0,50, FF 0,00. Üniversiteler kendi yönetmeliğine göre katsayıları değiştirebilir.</p><h2>Sık sorulan sorular</h2><details><summary>GANO ile DNO farkı nedir?</summary><p>DNO yalnızca bu dönemin ortalamasıdır. GANO ise bölümdeki tüm dönemleri içeren genel ağırlıklı ortalamadır.</p></details><details><summary>Başarısız dersler hesaba girer mi?</summary><p>FF notu 0,00 katsayıyla ortalamaya girer ve düşürür. Bazı üniversiteler dersi tekrar alınca eski notu siler, bu araç otomatik silmez.</p></details></section>
+<section class="related"><h2>Diğer hesaplayıcılar</h2><div class="grid"><a class="tool-card" href="vize-final-ortalama-hesaplama.html" data-k="Vize final ortalaması Ders ortalamasını ve geçmek için gereken final notunu bul. vize final ortalama geçme notu ders kaç almalıyım bütünleme not hesaplama"><span class="glyph" aria-hidden="true">V</span><span><h3>Vize final ortalaması</h3><p>Ders ortalamasını ve geçmek için gereken final notunu bul.</p></span></a><a class="tool-card" href="yks-puan-siralama-hesaplama.html" data-k="YKS puan ve sıralama TYT ve AYT netlerinden puan ve ÖSYM verisine dayalı tahmini sıralama. yks tyt ayt puan hesaplama sıralama net sayısal eşit ağırlık sözel obp diploma notu başarı sırası"><span class="glyph" aria-hidden="true">Y</span><span><h3>YKS puan ve sıralama</h3><p>TYT ve AYT netlerinden puan ve ÖSYM verisine dayalı tahmini sıralama.</p></span></a><a class="tool-card" href="yuzde-hesaplama.html" data-k="Yüzde hesaplama Yüzde bulma, yüzde fark, indirim ve artış için altı hızlı hesap. yüzde hesaplama yüzde kaç indirim zam artış oran yüzde fark"><span class="glyph" aria-hidden="true">%</span><span><h3>Yüzde hesaplama</h3><p>Yüzde bulma, yüzde fark, indirim ve artış için altı hızlı hesap.</p></span></a></div></section>
+</main>
+<footer class="wrap foot"><p><strong>Hesapça</strong>: sonuçlar tarayıcında hesaplanır, girdiğin rakamlar hiçbir yere gönderilmez.</p><p>Hesaplamalar bilgilendirme amaçlıdır ve bağlayıcı değildir; yatırım tavsiyesi içermez. Oranlar ve vergi dilimleri zamanla değişir. Karar vermeden önce bankandan veya resmi kaynaklardan doğrula.</p></footer>
+<script src="app.js"></script>
+<script>(() => {
+    const letters = [['4', 'AA'], ['3.5', 'BA'], ['3', 'BB'], ['2.5', 'CB'], ['2', 'CC'], ['1.5', 'DC'], ['1', 'DD'], ['0.5', 'FD'], ['0', 'FF']];
+    const rows = H.$('rows');
+    const defaults = [['Ders 1', 4, '3.5'], ['Ders 2', 3, '3'], ['Ders 3', 5, '4'], ['Ders 4', 4, '2.5'], ['Ders 5', 3, '3'], ['Ders 6', 2, '3.5']];
+    let n = 0;
+    const addRow = (name, kredi, harf) => {
+      n++;
+      const i = n;
+      const div = document.createElement('div');
+      div.className = 'gano-row';
+      div.innerHTML = '<div class="inp"><input type="text" id="n' + i + '" value="' + name + '" aria-label="Ders adı"></div>' +
+        '<div class="inp"><input type="text" inputmode="decimal" id="k' + i + '" data-num value="' + kredi + '" aria-label="Kredi"></div>' +
+        '<div class="inp"><select id="h' + i + '" aria-label="Harf notu">' + letters.map((l) => '<option value="' + l[0] + '"' + (l[0] === harf ? ' selected' : '') + '>' + l[1] + '</option>').join('') + '</select></div>' +
+        '<button type="button" class="btn ghost" aria-label="Dersi sil" data-del="' + i + '">×</button>';
+      rows.appendChild(div);
+      div.addEventListener('input', calc);
+      div.addEventListener('change', calc);
+      div.querySelector('[data-del]').addEventListener('click', () => { div.remove(); calc(); });
+    };
+    function calc() {
+      let pts = 0, cr = 0;
+      [].forEach.call(rows.children, (r) => {
+        const k = parseFloat(r.querySelector('[id^="k"]').value.replace(',', '.')) || 0;
+        const h = parseFloat(r.querySelector('select').value);
+        pts += k * h; cr += k;
+      });
+      const dno = cr > 0 ? pts / cr : 0;
+      const pg = H.val('pg'), pk = H.val('pk');
+      const gano = cr + pk > 0 ? (pg * pk + pts) / (cr + pk) : 0;
+      H.big('Dönem ortalaması (DNO)', H.fmt(dno, 2));
+      H.ledger('out', [
+        { k: 'Dönem kredisi', v: H.fmt(cr, 1) },
+        { k: 'Dönem puanı', v: H.fmt(pts, 2) },
+        { sep: true },
+        { k: 'Genel ortalama (GANO)', v: H.fmt(gano, 2), strong: true },
+        { k: 'Toplam kredi', v: H.fmt(cr + pk, 1) },
+      ]);
+      H.msg(dno > 4 || pg > 4 ? 'Ortalama 4,00\'ı aşıyor. Girdileri kontrol et.' : '');
+    }
+    defaults.forEach((d) => addRow(d[0], d[1], d[2]));
+    H.$('add').addEventListener('click', () => { addRow('Ders ' + (rows.children.length + 1), 3, '3'); calc(); });
+    H.on(['pg', 'pk'], calc);
+  })();</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hisse ortalama maliyet hesaplama | Hesapça</title>
+<meta name="description" content="Hisse senedinde birden fazla alımın ağırlıklı ortalama maliyetini ve hedef maliyet için gereken lot sayısını hesaplayın.">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta property="og:title" content="Hisse ortalama maliyet hesaplama | Hesapça">
+<meta property="og:description" content="Hisse senedinde birden fazla alımın ağırlıklı ortalama maliyetini ve hedef maliyet için gereken lot sayısını hesaplayın.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<link rel="canonical" href="https://hesapca.example/hisse-ortalama-maliyet-hesaplama.html">
+<link rel="stylesheet" href="style.css">
+<script>(function(){try{var t=localStorage.getItem('hc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"Hisse ortalama maliyet hesaplama","description":"Hisse senedinde birden fazla alımın ağırlıklı ortalama maliyetini ve hedef maliyet için gereken lot sayısını hesaplayın.","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"tr","offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Ortalama düşürmek mantıklı mı?","acceptedAnswer":{"@type":"Answer","text":"Bu bir yatırım stratejisi tavsiyesi değildir. Düşen bir hisseye daha fazla para koymak riski de büyütür. Kendi risk sınırını belirle."}}]}]</script>
+</head>
+<body>
+<header class="top"><div class="wrap bar"><a class="brand" href="index.html"><span class="mark">₺</span>Hesapça</a><nav aria-label="Ana menü"><a href="index.html#araclar">Tüm araçlar</a><button class="iconbtn" id="themeBtn" type="button" aria-label="Açık veya koyu tema"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"></path></svg></button></nav></div></header>
+<main class="wrap">
+<nav class="crumb" aria-label="Sayfa yolu"><a href="index.html">Ana sayfa</a> › <a href="index.html#yatirim">Tasarruf ve yatırım</a></nav>
+<div class="head"><h1>Hisse ortalama maliyet hesaplama</h1><p>Farklı fiyatlardan yaptığın alımları yaz. Ağırlıklı ortalama maliyetini ve hedef maliyete inmek için kaç lot alman gerektiğini gör.</p></div>
+<div class="tool"><div><div class="card"><div class="row2"><div class="field"><label for="p1">1. alım fiyatı</label><div class="inp"><input id="p1" type="text" inputmode="decimal" autocomplete="off" data-money="4" value="120,00"><span class="suf">₺</span></div></div><div class="field"><label for="q1">1. alım lot</label><div class="inp"><input id="q1" type="text" inputmode="decimal" autocomplete="off" data-money="0" value="100"><span class="suf">lot</span></div></div></div><div class="row2"><div class="field"><label for="p2">2. alım fiyatı</label><div class="inp"><input id="p2" type="text" inputmode="decimal" autocomplete="off" data-money="4" value="95,00"><span class="suf">₺</span></div></div><div class="field"><label for="q2">2. alım lot</label><div class="inp"><input id="q2" type="text" inputmode="decimal" autocomplete="off" data-money="0" value="150"><span class="suf">lot</span></div></div></div><div class="row2"><div class="field"><label for="p3">3. alım fiyatı</label><div class="inp"><input id="p3" type="text" inputmode="decimal" autocomplete="off" data-money="4" value=""><span class="suf">₺</span></div></div><div class="field"><label for="q3">3. alım lot</label><div class="inp"><input id="q3" type="text" inputmode="decimal" autocomplete="off" data-money="0" value=""><span class="suf">lot</span></div></div></div><div class="row2"><div class="field"><label for="p4">4. alım fiyatı</label><div class="inp"><input id="p4" type="text" inputmode="decimal" autocomplete="off" data-money="4" value=""><span class="suf">₺</span></div></div><div class="field"><label for="q4">4. alım lot</label><div class="inp"><input id="q4" type="text" inputmode="decimal" autocomplete="off" data-money="0" value=""><span class="suf">lot</span></div></div></div></div><div class="card"><h2>Ortalamayı düşürmek</h2><div class="row2"><div class="field"><label for="hedef">Hedef ortalama maliyet</label><div class="inp"><input id="hedef" type="text" inputmode="decimal" autocomplete="off" data-money="4" value="100,00"><span class="suf">₺</span></div></div><div class="field"><label for="yeni">Yeni alım fiyatı</label><div class="inp"><input id="yeni" type="text" inputmode="decimal" autocomplete="off" data-money="4" value="90,00"><span class="suf">₺</span></div></div></div></div></div><aside class="slip" aria-live="polite"><div class="slip-h">Hesap dökümü</div><div class="big"><span class="big-l" id="bigL"></span><output class="big-v" id="bigV"></output></div><div class="tear"></div><div class="ledger" id="out"></div><div class="viz" id="viz"></div><div class="msg" id="msg" role="status"></div><p class="slip-note">Komisyon dahil değildir. Boş bırakılan satırlar sayılmaz. Bu bir yatırım tavsiyesi değildir.</p></aside></div>
+
+<section class="prose"><h2>Ağırlıklı ortalama maliyet</h2>
+<p>Ortalama maliyet, toplam harcamanın toplam lota bölünmesidir. Fiyatı düşük aldığın lot sayısı fazlaysa ortalama o fiyata yaklaşır.</p>
+<div class="formula">ortalama = Σ(fiyat × lot) ÷ Σ lot</div>
+<h2>Hedef ortalamaya inmek için kaç lot?</h2>
+<p>Elinde Q lot ve c ortalama maliyet varken p fiyattan n lot daha alırsan yeni ortalama T olsun. Çözüm: n = Q × (c − T) ÷ (T − p). Hedef, mevcut ortalamadan küçük ve yeni alım fiyatından büyük olmalıdır.</p><h2>Sık sorulan sorular</h2><details><summary>Ortalama düşürmek mantıklı mı?</summary><p>Bu bir yatırım stratejisi tavsiyesi değildir. Düşen bir hisseye daha fazla para koymak riski de büyütür. Kendi risk sınırını belirle.</p></details></section>
+<section class="related"><h2>Diğer hesaplayıcılar</h2><div class="grid"><a class="tool-card" href="hisse-kar-zarar-hesaplama.html" data-k="Hisse kâr zarar hesaplama Alış, satış ve komisyona göre net kâr veya zararı ve başa baş fiyatını bul. hisse borsa kar zarar komisyon lot alım satım başa baş bist"><span class="glyph" aria-hidden="true">±</span><span><h3>Hisse kâr zarar hesaplama</h3><p>Alış, satış ve komisyona göre net kâr veya zararı ve başa baş fiyatını bul.</p></span></a><a class="tool-card" href="temettu-hesaplama.html" data-k="Temettü hesaplama Hisse başı temettüden net geliri ve temettü verimini hesapla. temettü kar payı verim stopaj hisse lot net temettü gelir"><span class="glyph" aria-hidden="true">÷</span><span><h3>Temettü hesaplama</h3><p>Hisse başı temettüden net geliri ve temettü verimini hesapla.</p></span></a><a class="tool-card" href="yuzde-hesaplama.html" data-k="Yüzde hesaplama Yüzde bulma, yüzde fark, indirim ve artış için altı hızlı hesap. yüzde hesaplama yüzde kaç indirim zam artış oran yüzde fark"><span class="glyph" aria-hidden="true">%</span><span><h3>Yüzde hesaplama</h3><p>Yüzde bulma, yüzde fark, indirim ve artış için altı hızlı hesap.</p></span></a></div></section>
+</main>
+<footer class="wrap foot"><p><strong>Hesapça</strong>: sonuçlar tarayıcında hesaplanır, girdiğin rakamlar hiçbir yere gönderilmez.</p><p>Hesaplamalar bilgilendirme amaçlıdır ve bağlayıcı değildir; yatırım tavsiyesi içermez. Oranlar ve vergi dilimleri zamanla değişir. Karar vermeden önce bankandan veya resmi kaynaklardan doğrula.</p></footer>
+<script src="app.js"></script>
+<script>(() => {
+    H.on(['p1', 'q1', 'p2', 'q2', 'p3', 'q3', 'p4', 'q4', 'hedef', 'yeni'], () => {
+      let cost = 0, qty = 0;
+      for (let i = 1; i <= 4; i++) { const p = H.val('p' + i), q = H.val('q' + i); if (p > 0 && q > 0) { cost += p * q; qty += q; } }
+      const avg = qty > 0 ? cost / qty : 0;
+      H.big('Ortalama maliyet', H.tl(avg, 4));
+      const T = H.val('hedef'), p = H.val('yeni');
+      let need = null, why = '';
+      if (qty > 0) {
+        if (T < avg && p < T) need = Math.ceil((qty * (avg - T)) / (T - p));
+        else why = T >= avg ? 'Hedef, mevcut ortalamadan düşük olmalı.' : 'Yeni alım fiyatı hedeften düşük olmalı.';
+      }
+      H.ledger('out', [
+        { k: 'Toplam lot', v: H.fmt(qty, 0) },
+        { k: 'Toplam maliyet', v: H.tl(cost) },
+        { sep: true },
+        { k: 'Hedefe inmek için lot', v: need === null ? '–' : H.fmt(need, 0) + ' lot', strong: true },
+        { k: 'Gereken ek tutar', v: need === null ? '–' : H.tl(need * p) },
+      ]);
+      H.msg(why);
+    });
+  })();</script>
+</body>
+</html>

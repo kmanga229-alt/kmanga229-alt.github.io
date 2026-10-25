@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KDV hesaplama: dahil ve hariç | Hesapça</title>
+<meta name="description" content="KDV dahil ve KDV hariç tutarı %1, %10, %20 oranlarıyla hesaplayın. Fatura toplamı ve KDV tutarı anında görünür.">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta property="og:title" content="KDV hesaplama: dahil ve hariç | Hesapça">
+<meta property="og:description" content="KDV dahil ve KDV hariç tutarı %1, %10, %20 oranlarıyla hesaplayın. Fatura toplamı ve KDV tutarı anında görünür.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<link rel="canonical" href="https://hesapca.example/kdv-hesaplama.html">
+<link rel="stylesheet" href="style.css">
+<script>(function(){try{var t=localStorage.getItem('hc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"KDV hesaplama: dahil ve hariç","description":"KDV dahil ve KDV hariç tutarı %1, %10, %20 oranlarıyla hesaplayın. Fatura toplamı ve KDV tutarı anında görünür.","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"tr","offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Dahil tutardan KDV neden %20 çıkarılmaz?","acceptedAnswer":{"@type":"Answer","text":"KDV, hariç tutarın üzerine eklenmiştir. Dahil tutarın yüzdesi alınırsa fazla KDV bulunur. Doğru yöntem 1 + oran ile bölmektir."}}]}]</script>
+</head>
+<body>
+<header class="top"><div class="wrap bar"><a class="brand" href="index.html"><span class="mark">₺</span>Hesapça</a><nav aria-label="Ana menü"><a href="index.html#araclar">Tüm araçlar</a><button class="iconbtn" id="themeBtn" type="button" aria-label="Açık veya koyu tema"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"></path></svg></button></nav></div></header>
+<main class="wrap">
+<nav class="crumb" aria-label="Sayfa yolu"><a href="index.html">Ana sayfa</a> › <a href="index.html#maas">Maaş ve vergi</a></nav>
+<div class="head"><h1>KDV hesaplama: dahil ve hariç</h1><p>Tutarı yaz, KDV oranını seç. KDV hariç tutardan dahile ya da dahil tutardan hariç tutara çevir.</p></div>
+<div class="tool"><div><div class="card"><div class="field"><span class="lab" id="mod-l">Hesap yönü</span><div class="seg" id="mod" role="radiogroup" aria-labelledby="mod-l" data-seg data-value="ekle"><button type="button" role="radio" aria-checked="true" data-v="ekle">KDV ekle (hariç → dahil)</button><button type="button" role="radio" aria-checked="false" data-v="cikar">KDV çıkar (dahil → hariç)</button></div></div>
+<div class="field"><label for="tutar">Tutar</label><div class="inp"><input id="tutar" type="text" inputmode="decimal" autocomplete="off" data-money="2" value="1.000"><span class="suf">₺</span></div></div>
+<div class="field"><span class="lab" id="oran-l">KDV oranı</span><div class="seg" id="oran" role="radiogroup" aria-labelledby="oran-l" data-seg data-value="20"><button type="button" role="radio" aria-checked="false" data-v="1">%1</button><button type="button" role="radio" aria-checked="false" data-v="10">%10</button><button type="button" role="radio" aria-checked="true" data-v="20">%20</button></div></div>
+<div class="field"><label for="ozel">Farklı bir oran</label><div class="inp"><input id="ozel" type="text" inputmode="decimal" autocomplete="off" data-num value=""><span class="suf">%</span></div><small>Doluysa yukarıdaki seçim yerine bu oran kullanılır.</small></div></div></div><aside class="slip" aria-live="polite"><div class="slip-h">Hesap dökümü</div><div class="big"><span class="big-l" id="bigL"></span><output class="big-v" id="bigV"></output></div><div class="tear"></div><div class="ledger" id="out"></div><div class="viz" id="viz"></div><div class="msg" id="msg" role="status"></div><p class="slip-note">Türkiye'de genel KDV oranı %20, indirimli oranlar %10 ve %1'dir. Ürün veya hizmetin oranını mevzuattan doğrula.</p></aside></div>
+
+<section class="prose"><h2>KDV nasıl hesaplanır?</h2>
+<p>KDV hariç tutara oran uygulanır. Dahil tutardan KDV bulmak için tutar 1 + oran'a bölünür.</p>
+<div class="formula">KDV dahil = hariç × (1 + oran)<br>KDV hariç = dahil ÷ (1 + oran)<br>KDV tutarı = dahil − hariç</div>
+<p>Örnek: 1.000 ₺ hariç tutarın %20 KDV'si 200 ₺, toplam 1.200 ₺'dir. 1.200 ₺ dahil tutardan hariç tutara dönmek için 1.200 ÷ 1,20 = 1.000 ₺ bulunur. Yüzde 20'yi 1.200'den çıkarmak (240 ₺) yanlış sonuç verir.</p><h2>Sık sorulan sorular</h2><details><summary>Dahil tutardan KDV neden %20 çıkarılmaz?</summary><p>KDV, hariç tutarın üzerine eklenmiştir. Dahil tutarın yüzdesi alınırsa fazla KDV bulunur. Doğru yöntem 1 + oran ile bölmektir.</p></details></section>
+<section class="related"><h2>Diğer hesaplayıcılar</h2><div class="grid"><a class="tool-card" href="yuzde-hesaplama.html" data-k="Yüzde hesaplama Yüzde bulma, yüzde fark, indirim ve artış için altı hızlı hesap. yüzde hesaplama yüzde kaç indirim zam artış oran yüzde fark"><span class="glyph" aria-hidden="true">%</span><span><h3>Yüzde hesaplama</h3><p>Yüzde bulma, yüzde fark, indirim ve artış için altı hızlı hesap.</p></span></a><a class="tool-card" href="brut-net-maas-hesaplama.html" data-k="Brüt net maaş hesaplama 2026 vergi dilimleri ve asgari ücret istisnasıyla 12 aylık net maaş. brüt net maaş hesaplama asgari ücret gelir vergisi sgk damga vergisi 2026 netten brüte"><span class="glyph" aria-hidden="true">₺</span><span><h3>Brüt net maaş hesaplama</h3><p>2026 vergi dilimleri ve asgari ücret istisnasıyla 12 aylık net maaş.</p></span></a><a class="tool-card" href="kira-artis-hesaplama.html" data-k="Kira artış hesaplama Yeni dönem kirasını ve artış tutarını TÜFE oranıyla hesapla. kira artış oranı tüfe yeni kira ev sahibi kiracı yıllık artış"><span class="glyph" aria-hidden="true">⌂</span><span><h3>Kira artış hesaplama</h3><p>Yeni dönem kirasını ve artış tutarını TÜFE oranıyla hesapla.</p></span></a></div></section>
+</main>
+<footer class="wrap foot"><p><strong>Hesapça</strong>: sonuçlar tarayıcında hesaplanır, girdiğin rakamlar hiçbir yere gönderilmez.</p><p>Hesaplamalar bilgilendirme amaçlıdır ve bağlayıcı değildir; yatırım tavsiyesi içermez. Oranlar ve vergi dilimleri zamanla değişir. Karar vermeden önce bankandan veya resmi kaynaklardan doğrula.</p></footer>
+<script src="app.js"></script>
+<script>(() => {
+    H.on(['mod', 'tutar', 'oran', 'ozel'], () => {
+      const T = H.val('tutar'), r = (H.$('ozel').value.trim() ? H.val('ozel') : Number(H.sv('oran'))) / 100;
+      const ex = H.sv('mod') === 'ekle' ? T : T / (1 + r);
+      const inc = H.sv('mod') === 'ekle' ? T * (1 + r) : T;
+      H.big(H.sv('mod') === 'ekle' ? 'KDV dahil toplam' : 'KDV hariç tutar', H.tl(H.sv('mod') === 'ekle' ? inc : ex));
+      H.ledger('out', [
+        { k: 'KDV hariç', v: H.tl(ex) },
+        { k: 'KDV oranı', v: H.pct(r * 100, 0) },
+        { k: 'KDV tutarı', v: H.tl(inc - ex) },
+        { sep: true },
+        { k: 'KDV dahil', v: H.tl(inc), strong: true },
+      ]);
+    });
+  })();</script>
+</body>
+</html>

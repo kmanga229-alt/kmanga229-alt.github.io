@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kredi kartı faiz ve gecikme faizi hesaplama | Hesapça</title>
+<meta name="description" content="Kredi kartı akdi faiz ve gecikme faizini borç tutarı ve gün sayısına göre, KKDF ve BSMV dahil hesaplayın.">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta property="og:title" content="Kredi kartı faiz ve gecikme faizi hesaplama | Hesapça">
+<meta property="og:description" content="Kredi kartı akdi faiz ve gecikme faizini borç tutarı ve gün sayısına göre, KKDF ve BSMV dahil hesaplayın.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<link rel="canonical" href="https://hesapca.example/kredi-karti-faiz-hesaplama.html">
+<link rel="stylesheet" href="style.css">
+<script>(function(){try{var t=localStorage.getItem('hc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"Kredi kartı faiz ve gecikme faizi hesaplama","description":"Kredi kartı akdi faiz ve gecikme faizini borç tutarı ve gün sayısına göre, KKDF ve BSMV dahil hesaplayın.","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"tr","offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Hangi oranı yazmalıyım?","acceptedAnswer":{"@type":"Answer","text":"Ekstrendeki veya bankanın ürün bilgi formundaki oranı yaz. Alan boşken araç TCMB azami oranlarından borca uygun olanı doldurur."}},{"@type":"Question","name":"Faiz üzerinden vergi alınır mı?","acceptedAnswer":{"@type":"Answer","text":"Evet, faize KKDF ve BSMV eklenir. Alanı bankanın uyguladığı toplam orana göre değiştirebilirsin."}}]}]</script>
+</head>
+<body>
+<header class="top"><div class="wrap bar"><a class="brand" href="index.html"><span class="mark">₺</span>Hesapça</a><nav aria-label="Ana menü"><a href="index.html#araclar">Tüm araçlar</a><button class="iconbtn" id="themeBtn" type="button" aria-label="Açık veya koyu tema"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"></path></svg></button></nav></div></header>
+<main class="wrap">
+<nav class="crumb" aria-label="Sayfa yolu"><a href="index.html">Ana sayfa</a> › <a href="index.html#borc">Kredi ve borç</a></nav>
+<div class="head"><h1>Kredi kartı faiz ve gecikme faizi hesaplama</h1><p>Borcu, gün sayısını ve faiz türünü seç. Faizi, vergileri ve borcun toplam tutarını gör.</p></div>
+<div class="tool"><div><div class="card"><div class="field"><label for="borc">Borç tutarı</label><div class="inp"><input id="borc" type="text" inputmode="decimal" autocomplete="off" data-money="2" value="30.000"><span class="suf">₺</span></div></div>
+<div class="field"><span class="lab" id="tur-l">Faiz türü</span><div class="seg" id="tur" role="radiogroup" aria-labelledby="tur-l" data-seg data-value="gecikme"><button type="button" role="radio" aria-checked="false" data-v="akdi">Akdi (dönem içi)</button><button type="button" role="radio" aria-checked="true" data-v="gecikme">Gecikme</button></div></div>
+<div class="row2"><div class="field"><label for="gun">Gün sayısı</label><div class="inp"><input id="gun" type="text" inputmode="decimal" autocomplete="off" data-num value="15"><span class="suf">gün</span></div></div><div class="field"><label for="oran">Aylık faiz</label><div class="inp"><input id="oran" type="text" inputmode="decimal" autocomplete="off" data-num value="4,05"><span class="suf">%</span></div><small>TCMB azami oranı.</small></div></div>
+<div class="field"><label for="vergi">Vergi yükü (KKDF + BSMV)</label><div class="inp"><input id="vergi" type="text" inputmode="decimal" autocomplete="off" data-num value="30"><span class="suf">%</span></div></div></div></div><aside class="slip" aria-live="polite"><div class="slip-h">Hesap dökümü</div><div class="big"><span class="big-l" id="bigL"></span><output class="big-v" id="bigV"></output></div><div class="tear"></div><div class="ledger" id="out"></div><div class="viz" id="viz"></div><div class="msg" id="msg" role="status"></div><p class="slip-note">Günlük faiz = aylık oran × 12 ÷ 365 olarak alınmıştır. Bankaların uygulaması küçük farklar gösterebilir. Oranlar TCMB duyurusuna göre değişir.</p></aside></div>
+
+<section class="prose"><h2>Kredi kartı faizi nasıl işler?</h2>
+<p>Akdi faiz, ekstreni son ödeme tarihine kadar tam ödemediğinde kalan borca uygulanır. Gecikme faizi, asgari ödemeyi bile yapmadığında işler ve akdi faizden daha yüksektir.</p>
+<div class="formula">günlük oran = aylık oran × 12 ÷ 365<br>faiz = borç × günlük oran × gün<br>toplam = borç + faiz × (1 + vergi yükü)</div>
+<p>TCMB, azami oranları dönem borcunun büyüklüğüne göre kademeli açıklar. Bu araç borcuna göre ilgili kademeyi otomatik doldurur, istersen elle değiştirebilirsin.</p><h2>Sık sorulan sorular</h2><details><summary>Hangi oranı yazmalıyım?</summary><p>Ekstrendeki veya bankanın ürün bilgi formundaki oranı yaz. Alan boşken araç TCMB azami oranlarından borca uygun olanı doldurur.</p></details><details><summary>Faiz üzerinden vergi alınır mı?</summary><p>Evet, faize KKDF ve BSMV eklenir. Alanı bankanın uyguladığı toplam orana göre değiştirebilirsin.</p></details></section>
+<section class="related"><h2>Diğer hesaplayıcılar</h2><div class="grid"><a class="tool-card" href="kredi-karti-asgari-odeme.html" data-k="Kredi kartı asgari ödeme Sadece asgari ödeme yaparsan borcun kaç ayda biter, ne kadar faiz ödersin? kredi kartı asgari ödeme borç kapatma faiz akdi taksitlendirme"><span class="glyph" aria-hidden="true">%</span><span><h3>Kredi kartı asgari ödeme</h3><p>Sadece asgari ödeme yaparsan borcun kaç ayda biter, ne kadar faiz ödersin?</p></span></a><a class="tool-card" href="kredi-hesaplama.html" data-k="Kredi hesaplama İhtiyaç, taşıt ve konut kredisi taksiti, toplam faiz ve ödeme planı. taksit faiz ihtiyaç taşıt konut kredi amortisman ödeme planı kkdf bsmv"><span class="glyph" aria-hidden="true">₺</span><span><h3>Kredi hesaplama</h3><p>İhtiyaç, taşıt ve konut kredisi taksiti, toplam faiz ve ödeme planı.</p></span></a><a class="tool-card" href="mevduat-faizi-hesaplama.html" data-k="Mevduat faizi hesaplama Vadeli hesabın brüt ve stopaj sonrası net getirisini gör. mevduat faiz getiri vadeli hesap stopaj net brüt banka"><span class="glyph" aria-hidden="true">↗</span><span><h3>Mevduat faizi hesaplama</h3><p>Vadeli hesabın brüt ve stopaj sonrası net getirisini gör.</p></span></a></div></section>
+</main>
+<footer class="wrap foot"><p><strong>Hesapça</strong>: sonuçlar tarayıcında hesaplanır, girdiğin rakamlar hiçbir yere gönderilmez.</p><p>Hesaplamalar bilgilendirme amaçlıdır ve bağlayıcı değildir; yatırım tavsiyesi içermez. Oranlar ve vergi dilimleri zamanla değişir. Karar vermeden önce bankandan veya resmi kaynaklardan doğrula.</p></footer>
+<script src="app.js"></script>
+<script>(() => {
+    const rates = { akdi: [3.25, 3.75, 4.25], gecikme: [3.55, 4.05, 4.55] };
+    let dirty = false;
+    H.$('oran').addEventListener('input', () => { dirty = true; });
+    H.$('tur').addEventListener('change', () => { dirty = false; });
+    H.on(['borc', 'tur', 'gun', 'oran', 'vergi'], () => {
+      const B = H.val('borc');
+      if (!dirty) {
+        const t = B < 30000 ? 0 : B <= 180000 ? 1 : 2;
+        H.setVal('oran', String(rates[H.sv('tur')][t]).replace('.', ','));
+      }
+      const g = H.val('gun'), daily = (H.val('oran') / 100) * 12 / 365;
+      const faiz = B * daily * g, vergi = faiz * (H.val('vergi') / 100);
+      H.big('Faiz ve vergi', H.tl(faiz + vergi));
+      H.ledger('out', [
+        { k: 'Borç', v: H.tl(B) },
+        { k: 'Günlük faiz oranı', v: H.pct(daily * 100, 4) },
+        { k: 'Faiz (' + g + ' gün)', v: H.tl(faiz) },
+        { k: 'KKDF + BSMV', v: H.tl(vergi) },
+        { sep: true },
+        { k: 'Ödenecek toplam', v: H.tl(B + faiz + vergi), strong: true },
+      ]);
+    });
+  })();</script>
+</body>
+</html>

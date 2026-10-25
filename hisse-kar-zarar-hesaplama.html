@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hisse senedi kâr zarar hesaplama | Hesapça</title>
+<meta name="description" content="Borsa işlemlerinde alış satış fiyatı, lot ve komisyona göre net kâr zarar ve başa baş fiyatını hesaplayın.">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta property="og:title" content="Hisse senedi kâr zarar hesaplama | Hesapça">
+<meta property="og:description" content="Borsa işlemlerinde alış satış fiyatı, lot ve komisyona göre net kâr zarar ve başa baş fiyatını hesaplayın.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<link rel="canonical" href="https://hesapca.example/hisse-kar-zarar-hesaplama.html">
+<link rel="stylesheet" href="style.css">
+<script>(function(){try{var t=localStorage.getItem('hc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"Hisse senedi kâr zarar hesaplama","description":"Borsa işlemlerinde alış satış fiyatı, lot ve komisyona göre net kâr zarar ve başa baş fiyatını hesaplayın.","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"tr","offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Kâr ve zarar vergilendirilir mi?","acceptedAnswer":{"@type":"Answer","text":"Borsa İstanbul hisse satış kazançları genel olarak bireysel yatırımcı için stopaja tabi değildir. Vergi durumun için güncel mevzuata veya bir mali müşavire danış."}}]}]</script>
+</head>
+<body>
+<header class="top"><div class="wrap bar"><a class="brand" href="index.html"><span class="mark">₺</span>Hesapça</a><nav aria-label="Ana menü"><a href="index.html#araclar">Tüm araçlar</a><button class="iconbtn" id="themeBtn" type="button" aria-label="Açık veya koyu tema"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"></path></svg></button></nav></div></header>
+<main class="wrap">
+<nav class="crumb" aria-label="Sayfa yolu"><a href="index.html">Ana sayfa</a> › <a href="index.html#yatirim">Tasarruf ve yatırım</a></nav>
+<div class="head"><h1>Hisse senedi kâr zarar hesaplama</h1><p>Alış fiyatı, satış fiyatı, lot sayısı ve komisyon oranını yaz. Masraflar düşüldükten sonraki net sonucu ve başa baş fiyatını gör.</p></div>
+<div class="tool"><div><div class="card"><div class="row2"><div class="field"><label for="alis">Alış fiyatı</label><div class="inp"><input id="alis" type="text" inputmode="decimal" autocomplete="off" data-money="4" value="100,00"><span class="suf">₺</span></div></div><div class="field"><label for="satis">Satış fiyatı</label><div class="inp"><input id="satis" type="text" inputmode="decimal" autocomplete="off" data-money="4" value="112,50"><span class="suf">₺</span></div></div></div>
+<div class="row2"><div class="field"><label for="adet">Lot (adet)</label><div class="inp"><input id="adet" type="text" inputmode="decimal" autocomplete="off" data-money="0" value="100"><span class="suf">lot</span></div></div><div class="field"><label for="kom">Komisyon (alış ve satışta ayrı)</label><div class="inp"><input id="kom" type="text" inputmode="decimal" autocomplete="off" data-num value="0,2"><span class="suf">%</span></div><small>Binde 2 = %0,2. Aracı kurumunun oranını yaz.</small></div></div></div></div><aside class="slip" aria-live="polite"><div class="slip-h">Hesap dökümü</div><div class="big"><span class="big-l" id="bigL"></span><output class="big-v" id="bigV"></output></div><div class="tear"></div><div class="ledger" id="out"></div><div class="viz" id="viz"></div><div class="msg" id="msg" role="status"></div><p class="slip-note">Komisyonun alış ve satışta ayrı ayrı uygulandığı varsayılır. BSMV veya takas ücreti ayrıca kesiliyorsa komisyon oranını buna göre artır. Bu bir yatırım tavsiyesi değildir.</p></aside></div>
+
+<section class="prose"><h2>Net kâr nasıl hesaplanır?</h2>
+<p>Hisse işleminde sonuç, satıştan eline geçenle alış için ödediğin tutarın farkıdır. Komisyon hem alışta hem satışta kesildiği için brüt farktan küçük kalır.</p>
+<div class="formula">maliyet = alış × lot × (1 + komisyon)<br>hasılat = satış × lot × (1 − komisyon)<br>net sonuç = hasılat − maliyet</div>
+<h2>Başa baş fiyatı</h2>
+<p>Başa baş fiyatı, masraflar dahil zarar etmeden çıkabileceğin en düşük satış fiyatıdır: alış × (1 + komisyon) ÷ (1 − komisyon).</p><h2>Sık sorulan sorular</h2><details><summary>Kâr ve zarar vergilendirilir mi?</summary><p>Borsa İstanbul hisse satış kazançları genel olarak bireysel yatırımcı için stopaja tabi değildir. Vergi durumun için güncel mevzuata veya bir mali müşavire danış.</p></details></section>
+<section class="related"><h2>Diğer hesaplayıcılar</h2><div class="grid"><a class="tool-card" href="hisse-ortalama-maliyet-hesaplama.html" data-k="Hisse ortalama maliyet Birden fazla alımın ortalama maliyetini ve düşürmek için gereken lotu bul. hisse ortalama maliyet ortalama düşürme lot borsa bist"><span class="glyph" aria-hidden="true">x̄</span><span><h3>Hisse ortalama maliyet</h3><p>Birden fazla alımın ortalama maliyetini ve düşürmek için gereken lotu bul.</p></span></a><a class="tool-card" href="temettu-hesaplama.html" data-k="Temettü hesaplama Hisse başı temettüden net geliri ve temettü verimini hesapla. temettü kar payı verim stopaj hisse lot net temettü gelir"><span class="glyph" aria-hidden="true">÷</span><span><h3>Temettü hesaplama</h3><p>Hisse başı temettüden net geliri ve temettü verimini hesapla.</p></span></a><a class="tool-card" href="yuzde-hesaplama.html" data-k="Yüzde hesaplama Yüzde bulma, yüzde fark, indirim ve artış için altı hızlı hesap. yüzde hesaplama yüzde kaç indirim zam artış oran yüzde fark"><span class="glyph" aria-hidden="true">%</span><span><h3>Yüzde hesaplama</h3><p>Yüzde bulma, yüzde fark, indirim ve artış için altı hızlı hesap.</p></span></a></div></section>
+</main>
+<footer class="wrap foot"><p><strong>Hesapça</strong>: sonuçlar tarayıcında hesaplanır, girdiğin rakamlar hiçbir yere gönderilmez.</p><p>Hesaplamalar bilgilendirme amaçlıdır ve bağlayıcı değildir; yatırım tavsiyesi içermez. Oranlar ve vergi dilimleri zamanla değişir. Karar vermeden önce bankandan veya resmi kaynaklardan doğrula.</p></footer>
+<script src="app.js"></script>
+<script>(() => {
+    H.on(['alis', 'satis', 'adet', 'kom'], () => {
+      const a = H.val('alis'), s = H.val('satis'), n = H.val('adet'), k = H.val('kom') / 100;
+      const cost = a * n * (1 + k), rev = s * n * (1 - k), pnl = rev - cost;
+      const pct = cost > 0 ? (pnl / cost) * 100 : 0;
+      const be = (a * (1 + k)) / (1 - k);
+      H.big(pnl >= 0 ? 'Net kâr' : 'Net zarar', H.tl(pnl));
+      H.ledger('out', [
+        { k: 'Toplam maliyet', v: H.tl(cost) },
+        { k: 'Satıştan gelen', v: H.tl(rev) },
+        { k: 'Ödenen komisyon', v: H.tl(a * n * k + s * n * k) },
+        { sep: true },
+        { k: 'Getiri', v: (pct >= 0 ? '+' : '') + H.pct(pct), strong: true },
+        { k: 'Başa baş satış fiyatı', v: H.tl(be, 4) },
+      ]);
+      H.msg(pnl < 0 && s > a ? 'Satış fiyatı alıştan yüksek ama komisyonlar sonucu zarara çeviriyor.' : '');
+    });
+  })();</script>
+</body>
+</html>

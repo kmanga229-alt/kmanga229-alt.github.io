@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Temettü ve temettü verimi hesaplama | Hesapça</title>
+<meta name="description" content="Hisse başı brüt temettüden stopaj sonrası net temettü gelirini ve temettü verimini hesaplayın.">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta property="og:title" content="Temettü ve temettü verimi hesaplama | Hesapça">
+<meta property="og:description" content="Hisse başı brüt temettüden stopaj sonrası net temettü gelirini ve temettü verimini hesaplayın.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<link rel="canonical" href="https://hesapca.example/temettu-hesaplama.html">
+<link rel="stylesheet" href="style.css">
+<script>(function(){try{var t=localStorage.getItem('hc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"Temettü ve temettü verimi hesaplama","description":"Hisse başı brüt temettüden stopaj sonrası net temettü gelirini ve temettü verimini hesaplayın.","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"tr","offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Temettü stopajı kaç?","acceptedAnswer":{"@type":"Answer","text":"Tam mükellef gerçek kişilerde kâr payı dağıtımında genellikle %10 stopaj yapılır. Durumuna göre farklı olabilir, güncel mevzuatı kontrol et."}}]}]</script>
+</head>
+<body>
+<header class="top"><div class="wrap bar"><a class="brand" href="index.html"><span class="mark">₺</span>Hesapça</a><nav aria-label="Ana menü"><a href="index.html#araclar">Tüm araçlar</a><button class="iconbtn" id="themeBtn" type="button" aria-label="Açık veya koyu tema"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"></path></svg></button></nav></div></header>
+<main class="wrap">
+<nav class="crumb" aria-label="Sayfa yolu"><a href="index.html">Ana sayfa</a> › <a href="index.html#yatirim">Tasarruf ve yatırım</a></nav>
+<div class="head"><h1>Temettü ve temettü verimi hesaplama</h1><p>Lot sayını, hisse başı brüt temettüyü ve hisse fiyatını yaz. Stopaj sonrası net temettüyü ve verimi gör.</p></div>
+<div class="tool"><div><div class="card"><div class="row2"><div class="field"><label for="lot">Lot sayısı</label><div class="inp"><input id="lot" type="text" inputmode="decimal" autocomplete="off" data-money="0" value="1.000"><span class="suf">lot</span></div></div><div class="field"><label for="tem">Hisse başı brüt temettü</label><div class="inp"><input id="tem" type="text" inputmode="decimal" autocomplete="off" data-money="4" value="2,50"><span class="suf">₺</span></div></div></div>
+<div class="row2"><div class="field"><label for="fiyat">Hisse fiyatı</label><div class="inp"><input id="fiyat" type="text" inputmode="decimal" autocomplete="off" data-money="4" value="50,00"><span class="suf">₺</span></div></div><div class="field"><label for="stopaj">Temettü stopajı</label><div class="inp"><input id="stopaj" type="text" inputmode="decimal" autocomplete="off" data-num value="10"><span class="suf">%</span></div><small>Gerçek kişiler için genellikle %10.</small></div></div></div></div><aside class="slip" aria-live="polite"><div class="slip-h">Hesap dökümü</div><div class="big"><span class="big-l" id="bigL"></span><output class="big-v" id="bigV"></output></div><div class="tear"></div><div class="ledger" id="out"></div><div class="viz" id="viz"></div><div class="msg" id="msg" role="status"></div><p class="slip-note">Bu bir yatırım tavsiyesi değildir. Temettü geçmiş dönem karına bağlıdır, gelecek yıl aynı olmayabilir.</p></aside></div>
+
+<section class="prose"><h2>Temettü geliri nasıl hesaplanır?</h2>
+<p>Temettü (kâr payı), şirketin kârından hissedarlara dağıttığı paydır. Hisse başına brüt tutar lot sayısıyla çarpılır, stopaj düşülür.</p>
+<div class="formula">brüt temettü = lot × hisse başı temettü<br>net temettü = brüt × (1 − stopaj)<br>temettü verimi = hisse başı temettü ÷ hisse fiyatı</div>
+<h2>Verim neyi anlatır?</h2>
+<p>Verim, hisseye yatırdığın paranın temettüyle yıllık kaç yüzde geri döndüğünü gösterir. Tek başına iyi bir yatırımın göstergesi değildir, hisse fiyatındaki değişim de sonucu etkiler.</p><h2>Sık sorulan sorular</h2><details><summary>Temettü stopajı kaç?</summary><p>Tam mükellef gerçek kişilerde kâr payı dağıtımında genellikle %10 stopaj yapılır. Durumuna göre farklı olabilir, güncel mevzuatı kontrol et.</p></details></section>
+<section class="related"><h2>Diğer hesaplayıcılar</h2><div class="grid"><a class="tool-card" href="hisse-kar-zarar-hesaplama.html" data-k="Hisse kâr zarar hesaplama Alış, satış ve komisyona göre net kâr veya zararı ve başa baş fiyatını bul. hisse borsa kar zarar komisyon lot alım satım başa baş bist"><span class="glyph" aria-hidden="true">±</span><span><h3>Hisse kâr zarar hesaplama</h3><p>Alış, satış ve komisyona göre net kâr veya zararı ve başa baş fiyatını bul.</p></span></a><a class="tool-card" href="hisse-ortalama-maliyet-hesaplama.html" data-k="Hisse ortalama maliyet Birden fazla alımın ortalama maliyetini ve düşürmek için gereken lotu bul. hisse ortalama maliyet ortalama düşürme lot borsa bist"><span class="glyph" aria-hidden="true">x̄</span><span><h3>Hisse ortalama maliyet</h3><p>Birden fazla alımın ortalama maliyetini ve düşürmek için gereken lotu bul.</p></span></a><a class="tool-card" href="birikim-hesaplama.html" data-k="Birikim ve bileşik getiri Düzenli yatırımın yıllar içinde nereye varacağını ve reel değerini gör. birikim bileşik faiz yatırım getiri aylık ekleme reel enflasyon fon"><span class="glyph" aria-hidden="true">∑</span><span><h3>Birikim ve bileşik getiri</h3><p>Düzenli yatırımın yıllar içinde nereye varacağını ve reel değerini gör.</p></span></a></div></section>
+</main>
+<footer class="wrap foot"><p><strong>Hesapça</strong>: sonuçlar tarayıcında hesaplanır, girdiğin rakamlar hiçbir yere gönderilmez.</p><p>Hesaplamalar bilgilendirme amaçlıdır ve bağlayıcı değildir; yatırım tavsiyesi içermez. Oranlar ve vergi dilimleri zamanla değişir. Karar vermeden önce bankandan veya resmi kaynaklardan doğrula.</p></footer>
+<script src="app.js"></script>
+<script>(() => {
+    H.on(['lot', 'tem', 'fiyat', 'stopaj'], () => {
+      const lot = H.val('lot'), t = H.val('tem'), p = H.val('fiyat'), st = H.val('stopaj') / 100;
+      const gross = lot * t, tax = gross * st, net = gross - tax;
+      H.big('Net temettü', H.tl(net));
+      H.ledger('out', [
+        { k: 'Brüt temettü', v: H.tl(gross) },
+        { k: 'Stopaj', v: H.tl(tax) },
+        { sep: true },
+        { k: 'Brüt verim', v: H.pct(p > 0 ? (t / p) * 100 : 0) },
+        { k: 'Net verim', v: H.pct(p > 0 ? (t / p) * (1 - st) * 100 : 0), strong: true },
+        { k: 'Yatırılan tutar', v: H.tl(lot * p) },
+      ]);
+    });
+  })();</script>
+</body>
+</html>

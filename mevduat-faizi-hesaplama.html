@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mevduat faizi getirisi hesaplama | Hesapça</title>
+<meta name="description" content="Vadeli mevduat için brüt getiri, stopaj kesintisi ve net getiriyi 2026 stopaj oranlarıyla hesaplayın.">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta property="og:title" content="Mevduat faizi getirisi hesaplama | Hesapça">
+<meta property="og:description" content="Vadeli mevduat için brüt getiri, stopaj kesintisi ve net getiriyi 2026 stopaj oranlarıyla hesaplayın.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<link rel="canonical" href="https://hesapca.example/mevduat-faizi-hesaplama.html">
+<link rel="stylesheet" href="style.css">
+<script>(function(){try{var t=localStorage.getItem('hc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"Mevduat faizi getirisi hesaplama","description":"Vadeli mevduat için brüt getiri, stopaj kesintisi ve net getiriyi 2026 stopaj oranlarıyla hesaplayın.","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"tr","offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Net getiri enflasyonu geçiyor mu?","acceptedAnswer":{"@type":"Answer","text":"Net yıllık getiriyi enflasyon oranıyla karşılaştırmak için enflasyon hesaplayıcıyı kullan. Reel getiri, nominal getiriden enflasyon çıkarıldıktan sonra kalandır."}},{"@type":"Question","name":"Stopaj oranını neden değiştirebiliyorum?","acceptedAnswer":{"@type":"Answer","text":"Oranlar sık değişir. Güncel oranı yazarak hesabı güncel tutabilirsin."}}]}]</script>
+</head>
+<body>
+<header class="top"><div class="wrap bar"><a class="brand" href="index.html"><span class="mark">₺</span>Hesapça</a><nav aria-label="Ana menü"><a href="index.html#araclar">Tüm araçlar</a><button class="iconbtn" id="themeBtn" type="button" aria-label="Açık veya koyu tema"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"></path></svg></button></nav></div></header>
+<main class="wrap">
+<nav class="crumb" aria-label="Sayfa yolu"><a href="index.html">Ana sayfa</a> › <a href="index.html#yatirim">Tasarruf ve yatırım</a></nav>
+<div class="head"><h1>Mevduat faizi getirisi hesaplama</h1><p>Tutarı, yıllık faizi ve vadeyi yaz. Stopaj düşüldükten sonra eline geçen net getiriyi gör.</p></div>
+<div class="tool"><div><div class="card"><div class="field"><label for="tutar">Yatırılan tutar</label><div class="inp"><input id="tutar" type="text" inputmode="decimal" autocomplete="off" data-money="2" value="100.000"><span class="suf">₺</span></div></div>
+<div class="row2"><div class="field"><label for="faiz">Yıllık brüt faiz</label><div class="inp"><input id="faiz" type="text" inputmode="decimal" autocomplete="off" data-num value="45"><span class="suf">%</span></div><small>Bankanın duyurduğu yıllık oran. Örnek değerdir.</small></div><div class="field"><label for="gun">Vade</label><div class="inp"><input id="gun" type="text" inputmode="decimal" autocomplete="off" data-num value="32"><span class="suf">gün</span></div></div></div>
+<div class="field"><label for="stopaj">Stopaj oranı</label><div class="inp"><input id="stopaj" type="text" inputmode="decimal" autocomplete="off" data-num value="17,5"><span class="suf">%</span></div><small>Vadeye göre otomatik dolar: 6 aya kadar %17,5, 1 yıla kadar %15, daha uzun %10.</small></div></div></div><aside class="slip" aria-live="polite"><div class="slip-h">Hesap dökümü</div><div class="big"><span class="big-l" id="bigL"></span><output class="big-v" id="bigV"></output></div><div class="tear"></div><div class="ledger" id="out"></div><div class="viz" id="viz"></div><div class="msg" id="msg" role="status"></div><p class="slip-note">Basit faiz hesabıdır: tutar × oran × gün ÷ 365. Stopaj oranları Temmuz 2025 düzenlemesine göre alınmıştır. Güncel oranı bankandan doğrula.</p></aside></div>
+
+<section class="prose"><h2>Mevduat getirisi nasıl hesaplanır?</h2>
+<p>Vadeli hesapta faiz, vade sonunda gün sayısına göre ödenir. Faizden önce stopaj kesilir, yani eline geçen tutar brüt getirinin altındadır.</p>
+<div class="formula">brüt getiri = tutar × yıllık faiz × gün ÷ 365<br>net getiri = brüt getiri × (1 − stopaj)</div>
+<h2>Stopaj oranları</h2>
+<p>TL mevduatta stopaj vadeye göre değişir. 9 Temmuz 2025'ten itibaren vadesiz ve 6 aya kadar vadeli hesaplarda %17,5, 1 yıla kadar %15, 1 yıldan uzunda %10 uygulanır. Oranlar Cumhurbaşkanı kararıyla değişebilir.</p>
+<h2>Yenileyerek büyütmek</h2>
+<p>Vade bitince anapara ve faizi tekrar yatırırsan getiri bileşik büyür. Sonuç panelindeki yıllık eşdeğer, bu hesabı yıllığa çevirir.</p><h2>Sık sorulan sorular</h2><details><summary>Net getiri enflasyonu geçiyor mu?</summary><p>Net yıllık getiriyi enflasyon oranıyla karşılaştırmak için enflasyon hesaplayıcıyı kullan. Reel getiri, nominal getiriden enflasyon çıkarıldıktan sonra kalandır.</p></details><details><summary>Stopaj oranını neden değiştirebiliyorum?</summary><p>Oranlar sık değişir. Güncel oranı yazarak hesabı güncel tutabilirsin.</p></details></section>
+<section class="related"><h2>Diğer hesaplayıcılar</h2><div class="grid"><a class="tool-card" href="birikim-hesaplama.html" data-k="Birikim ve bileşik getiri Düzenli yatırımın yıllar içinde nereye varacağını ve reel değerini gör. birikim bileşik faiz yatırım getiri aylık ekleme reel enflasyon fon"><span class="glyph" aria-hidden="true">∑</span><span><h3>Birikim ve bileşik getiri</h3><p>Düzenli yatırımın yıllar içinde nereye varacağını ve reel değerini gör.</p></span></a><a class="tool-card" href="enflasyon-hesaplama.html" data-k="Enflasyon ve alım gücü Paranın yıllar içinde ne kadar değer kaybettiğini hesapla. enflasyon alım gücü değer kaybı tüfe satın alma gücü fiyat artışı"><span class="glyph" aria-hidden="true">↘</span><span><h3>Enflasyon ve alım gücü</h3><p>Paranın yıllar içinde ne kadar değer kaybettiğini hesapla.</p></span></a><a class="tool-card" href="kredi-hesaplama.html" data-k="Kredi hesaplama İhtiyaç, taşıt ve konut kredisi taksiti, toplam faiz ve ödeme planı. taksit faiz ihtiyaç taşıt konut kredi amortisman ödeme planı kkdf bsmv"><span class="glyph" aria-hidden="true">₺</span><span><h3>Kredi hesaplama</h3><p>İhtiyaç, taşıt ve konut kredisi taksiti, toplam faiz ve ödeme planı.</p></span></a></div></section>
+</main>
+<footer class="wrap foot"><p><strong>Hesapça</strong>: sonuçlar tarayıcında hesaplanır, girdiğin rakamlar hiçbir yere gönderilmez.</p><p>Hesaplamalar bilgilendirme amaçlıdır ve bağlayıcı değildir; yatırım tavsiyesi içermez. Oranlar ve vergi dilimleri zamanla değişir. Karar vermeden önce bankandan veya resmi kaynaklardan doğrula.</p></footer>
+<script src="app.js"></script>
+<script>(() => {
+    let dirty = false;
+    H.$('stopaj').addEventListener('input', () => { dirty = true; });
+    H.on(['tutar', 'faiz', 'gun', 'stopaj'], () => {
+      const P = H.val('tutar'), r = H.val('faiz') / 100, g = H.val('gun');
+      if (!dirty) H.setVal('stopaj', g <= 183 ? '17,5' : g <= 365 ? '15' : '10');
+      const brut = P * r * g / 365, st = brut * H.val('stopaj') / 100, net = brut - st;
+      const per = g > 0 ? net / P : 0;
+      const yearly = g > 0 ? Math.pow(1 + per, 365 / g) - 1 : 0;
+      H.big('Net getiri', H.tl(net));
+      H.ledger('out', [
+        { k: 'Yatırılan tutar', v: H.tl(P) },
+        { k: 'Brüt getiri (' + g + ' gün)', v: H.tl(brut) },
+        { k: 'Stopaj (' + H.pct(H.val('stopaj'), 1) + ')', v: H.tl(st) },
+        { sep: true },
+        { k: 'Vade sonu bakiye', v: H.tl(P + net), strong: true },
+        { k: 'Vade getirisi (net)', v: H.pct(per * 100) },
+        { k: 'Yıllık eşdeğer (yenilenirse)', v: H.pct(yearly * 100, 1) },
+      ]);
+      H.donut('viz', [
+        { label: 'Net getiri', value: net, color: 'var(--c1)' },
+        { label: 'Stopaj', value: st, color: 'var(--c0)' },
+      ]);
+    });
+  })();</script>
+</body>
+</html>

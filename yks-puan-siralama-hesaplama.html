@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>YKS puan ve sıralama hesaplama | Hesapça</title>
+<meta name="description" content="TYT ve AYT doğru yanlış sayılarından net, puan ve ÖSYM 2025 yerleştirme puanı dağılımına göre tahmini YKS sıralaması hesaplayın.">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta property="og:title" content="YKS puan ve sıralama hesaplama | Hesapça">
+<meta property="og:description" content="TYT ve AYT doğru yanlış sayılarından net, puan ve ÖSYM 2025 yerleştirme puanı dağılımına göre tahmini YKS sıralaması hesaplayın.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<link rel="canonical" href="https://hesapca.example/yks-puan-siralama-hesaplama.html">
+<link rel="stylesheet" href="style.css">
+<script>(function(){try{var t=localStorage.getItem('hc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"YKS puan ve sıralama hesaplama","description":"TYT ve AYT doğru yanlış sayılarından net, puan ve ÖSYM 2025 yerleştirme puanı dağılımına göre tahmini YKS sıralaması hesaplayın.","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"tr","offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Sıralama verisi hangi yıla ait?","acceptedAnswer":{"@type":"Answer","text":"ÖSYM'nin yayımladığı 2025 YKS yerleştirme puanlarının yığınsal dağılımı kullanılır. 2026 dağılımı farklı olabilir; yaklaşık bir yön gösterir."}},{"@type":"Question","name":"Diploma notu neden önemli?","acceptedAnswer":{"@type":"Answer","text":"Diploma notun yerleştirme puanına en fazla 60 puan ekler. 100 diploma notu ile 50 arasında 30 puan fark oluşur."}},{"@type":"Question","name":"Net nasıl hesaplanır?","acceptedAnswer":{"@type":"Answer","text":"Dört yanlış bir doğruyu götürür. 30 doğru ve 8 yanlış 28 net eder."}}]}]</script>
+</head>
+<body>
+<header class="top"><div class="wrap bar"><a class="brand" href="index.html"><span class="mark">₺</span>Hesapça</a><nav aria-label="Ana menü"><a href="index.html#araclar">Tüm araçlar</a><button class="iconbtn" id="themeBtn" type="button" aria-label="Açık veya koyu tema"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"></path></svg></button></nav></div></header>
+<main class="wrap">
+<nav class="crumb" aria-label="Sayfa yolu"><a href="index.html">Ana sayfa</a> › <a href="index.html#egitim">Eğitim</a></nav>
+<div class="head"><h1>YKS puan ve sıralama hesaplama</h1><p>Doğru ve yanlış sayılarını gir. Netlerini, TYT ve AYT puanını ve ÖSYM'nin yayımladığı dağılıma göre tahmini başarı sırasını gör.</p></div>
+<div class="tool"><div><div class="card"><div class="field"><span class="lab" id="tur-l">Puan türü</span><div class="seg" id="tur" role="radiogroup" aria-labelledby="tur-l" data-seg data-value="SAY"><button type="button" role="radio" aria-checked="true" data-v="SAY">Sayısal</button><button type="button" role="radio" aria-checked="false" data-v="EA">Eşit ağırlık</button><button type="button" role="radio" aria-checked="false" data-v="SOZ">Sözel</button><button type="button" role="radio" aria-checked="false" data-v="TYT">Sadece TYT</button></div></div>
+<div class="field"><label for="dip">Diploma notu</label><div class="inp"><input id="dip" type="text" inputmode="decimal" autocomplete="off" data-num value="80"><span class="suf">/ 100</span></div><small>50 ile 100 arasında. Yerleştirme puanına diploma notu × 0,6 eklenir.</small></div>
+<div id="grp-TYT"  style="margin-top:18px"><h2>TYT</h2><div class="lessons"><div class="lesson head2"><span>Ders (soru sayısı)</span><span>Doğru</span><span>Yanlış</span></div><div class="lesson"><span>Türkçe <small>(40)</small></span><div class="inp"><input id="trd" type="text" inputmode="decimal" data-num data-g="TYT" data-id="tr" data-max="40" data-k="3.3" value="30" aria-label="Türkçe doğru"></div><div class="inp"><input id="try" type="text" inputmode="decimal" data-num value="5" aria-label="Türkçe yanlış"></div></div><div class="lesson"><span>Sosyal Bilimler <small>(20)</small></span><div class="inp"><input id="sosd" type="text" inputmode="decimal" data-num data-g="TYT" data-id="sos" data-max="20" data-k="3.4" value="12" aria-label="Sosyal Bilimler doğru"></div><div class="inp"><input id="sosy" type="text" inputmode="decimal" data-num value="4" aria-label="Sosyal Bilimler yanlış"></div></div><div class="lesson"><span>Temel Matematik <small>(40)</small></span><div class="inp"><input id="tmd" type="text" inputmode="decimal" data-num data-g="TYT" data-id="tm" data-max="40" data-k="3.3" value="25" aria-label="Temel Matematik doğru"></div><div class="inp"><input id="tmy" type="text" inputmode="decimal" data-num value="8" aria-label="Temel Matematik yanlış"></div></div><div class="lesson"><span>Fen Bilimleri <small>(20)</small></span><div class="inp"><input id="fend" type="text" inputmode="decimal" data-num data-g="TYT" data-id="fen" data-max="20" data-k="3.4" value="10" aria-label="Fen Bilimleri doğru"></div><div class="inp"><input id="feny" type="text" inputmode="decimal" data-num value="6" aria-label="Fen Bilimleri yanlış"></div></div></div></div>
+<div id="ayt">
+<div id="grp-SAY"  style="margin-top:18px"><h2>AYT Sayısal</h2><div class="lessons"><div class="lesson head2"><span>Ders (soru sayısı)</span><span>Doğru</span><span>Yanlış</span></div><div class="lesson"><span>Matematik <small>(40)</small></span><div class="inp"><input id="smatd" type="text" inputmode="decimal" data-num data-g="AYT" data-id="smat" data-max="40" data-k="3" value="25" aria-label="Matematik doğru"></div><div class="inp"><input id="smaty" type="text" inputmode="decimal" data-num value="10" aria-label="Matematik yanlış"></div></div><div class="lesson"><span>Fizik <small>(14)</small></span><div class="inp"><input id="sfizd" type="text" inputmode="decimal" data-num data-g="AYT" data-id="sfiz" data-max="14" data-k="2.85" value="8" aria-label="Fizik doğru"></div><div class="inp"><input id="sfizy" type="text" inputmode="decimal" data-num value="4" aria-label="Fizik yanlış"></div></div><div class="lesson"><span>Kimya <small>(13)</small></span><div class="inp"><input id="skimd" type="text" inputmode="decimal" data-num data-g="AYT" data-id="skim" data-max="13" data-k="3.07" value="8" aria-label="Kimya doğru"></div><div class="inp"><input id="skimy" type="text" inputmode="decimal" data-num value="3" aria-label="Kimya yanlış"></div></div><div class="lesson"><span>Biyoloji <small>(13)</small></span><div class="inp"><input id="sbiyd" type="text" inputmode="decimal" data-num data-g="AYT" data-id="sbiy" data-max="13" data-k="3.07" value="8" aria-label="Biyoloji doğru"></div><div class="inp"><input id="sbiyy" type="text" inputmode="decimal" data-num value="3" aria-label="Biyoloji yanlış"></div></div></div></div>
+<div id="grp-EA" hidden style="margin-top:18px"><h2>AYT Eşit ağırlık</h2><div class="lessons"><div class="lesson head2"><span>Ders (soru sayısı)</span><span>Doğru</span><span>Yanlış</span></div><div class="lesson"><span>Türk Dili ve Edebiyatı <small>(24)</small></span><div class="inp"><input id="eedbd" type="text" inputmode="decimal" data-num data-g="AYT" data-id="eedb" data-max="24" data-k="3" value="14" aria-label="Türk Dili ve Edebiyatı doğru"></div><div class="inp"><input id="eedby" type="text" inputmode="decimal" data-num value="5" aria-label="Türk Dili ve Edebiyatı yanlış"></div></div><div class="lesson"><span>Tarih-1 <small>(10)</small></span><div class="inp"><input id="et1d" type="text" inputmode="decimal" data-num data-g="AYT" data-id="et1" data-max="10" data-k="2.8" value="6" aria-label="Tarih-1 doğru"></div><div class="inp"><input id="et1y" type="text" inputmode="decimal" data-num value="2" aria-label="Tarih-1 yanlış"></div></div><div class="lesson"><span>Coğrafya-1 <small>(6)</small></span><div class="inp"><input id="ec1d" type="text" inputmode="decimal" data-num data-g="AYT" data-id="ec1" data-max="6" data-k="3.33" value="4" aria-label="Coğrafya-1 doğru"></div><div class="inp"><input id="ec1y" type="text" inputmode="decimal" data-num value="1" aria-label="Coğrafya-1 yanlış"></div></div><div class="lesson"><span>Matematik <small>(40)</small></span><div class="inp"><input id="ematd" type="text" inputmode="decimal" data-num data-g="AYT" data-id="emat" data-max="40" data-k="3" value="25" aria-label="Matematik doğru"></div><div class="inp"><input id="ematy" type="text" inputmode="decimal" data-num value="10" aria-label="Matematik yanlış"></div></div></div></div>
+<div id="grp-SOZ" hidden style="margin-top:18px"><h2>AYT Sözel</h2><div class="lessons"><div class="lesson head2"><span>Ders (soru sayısı)</span><span>Doğru</span><span>Yanlış</span></div><div class="lesson"><span>Türk Dili ve Edebiyatı <small>(24)</small></span><div class="inp"><input id="zedbd" type="text" inputmode="decimal" data-num data-g="AYT" data-id="zedb" data-max="24" data-k="3" value="14" aria-label="Türk Dili ve Edebiyatı doğru"></div><div class="inp"><input id="zedby" type="text" inputmode="decimal" data-num value="5" aria-label="Türk Dili ve Edebiyatı yanlış"></div></div><div class="lesson"><span>Tarih-1 <small>(10)</small></span><div class="inp"><input id="zt1d" type="text" inputmode="decimal" data-num data-g="AYT" data-id="zt1" data-max="10" data-k="2.8" value="6" aria-label="Tarih-1 doğru"></div><div class="inp"><input id="zt1y" type="text" inputmode="decimal" data-num value="2" aria-label="Tarih-1 yanlış"></div></div><div class="lesson"><span>Coğrafya-1 <small>(6)</small></span><div class="inp"><input id="zc1d" type="text" inputmode="decimal" data-num data-g="AYT" data-id="zc1" data-max="6" data-k="3.33" value="4" aria-label="Coğrafya-1 doğru"></div><div class="inp"><input id="zc1y" type="text" inputmode="decimal" data-num value="1" aria-label="Coğrafya-1 yanlış"></div></div><div class="lesson"><span>Tarih-2 <small>(11)</small></span><div class="inp"><input id="zt2d" type="text" inputmode="decimal" data-num data-g="AYT" data-id="zt2" data-max="11" data-k="2.91" value="6" aria-label="Tarih-2 doğru"></div><div class="inp"><input id="zt2y" type="text" inputmode="decimal" data-num value="3" aria-label="Tarih-2 yanlış"></div></div><div class="lesson"><span>Coğrafya-2 <small>(11)</small></span><div class="inp"><input id="zc2d" type="text" inputmode="decimal" data-num data-g="AYT" data-id="zc2" data-max="11" data-k="2.91" value="6" aria-label="Coğrafya-2 doğru"></div><div class="inp"><input id="zc2y" type="text" inputmode="decimal" data-num value="3" aria-label="Coğrafya-2 yanlış"></div></div><div class="lesson"><span>Felsefe Grubu <small>(12)</small></span><div class="inp"><input id="zfeld" type="text" inputmode="decimal" data-num data-g="AYT" data-id="zfel" data-max="12" data-k="3" value="7" aria-label="Felsefe Grubu doğru"></div><div class="inp"><input id="zfely" type="text" inputmode="decimal" data-num value="3" aria-label="Felsefe Grubu yanlış"></div></div><div class="lesson"><span>Din Kültürü <small>(6)</small></span><div class="inp"><input id="zdind" type="text" inputmode="decimal" data-num data-g="AYT" data-id="zdin" data-max="6" data-k="3.33" value="4" aria-label="Din Kültürü doğru"></div><div class="inp"><input id="zdiny" type="text" inputmode="decimal" data-num value="1" aria-label="Din Kültürü yanlış"></div></div></div></div>
+</div></div><div class="card"><h2>Puanını biliyorsan sıralamaya çevir</h2>
+<div class="row2"><div class="field"><label for="ptur">Puan türü</label><div class="inp"><select id="ptur"><option value="SAY" selected>Sayısal</option><option value="EA">Eşit ağırlık</option><option value="SOZ">Sözel</option><option value="TYT">TYT</option></select></div></div><div class="field"><label for="pup">Yerleştirme puanı</label><div class="inp"><input id="pup" type="text" inputmode="decimal" autocomplete="off" data-num value="450"></div><small>150 ile 560 arası.</small></div></div>
+<div class="pcard"><div class="res" id="pres">–</div></div></div></div><aside class="slip" aria-live="polite"><div class="slip-h">Hesap dökümü</div><div class="big"><span class="big-l" id="bigL"></span><output class="big-v" id="bigV"></output></div><div class="tear"></div><div class="ledger" id="out"></div><div class="viz" id="viz"></div><div class="msg" id="msg" role="status"></div><p class="slip-note">Puan ve sıralama tahmindir. ÖSYM puanı her yıl sınavın zorluğuna göre standartlaştırır, bu yüzden gerçek puan yaklaşık ±10 oynayabilir. Sıralama, ÖSYM'nin yayımladığı 2025 YKS yerleştirme puanı yığınsal dağılımından hesaplanır. Kesin sonuç için ÖSYM sonuç belgene bak.</p></aside></div>
+
+<section class="prose"><h2>YKS puanı nasıl hesaplanır?</h2>
+<p>Net = doğru − yanlış ÷ 4. Her dersin neti bir katsayıyla çarpılır ve toplanır. Tüm adaylara 100 taban puan verilir.</p>
+<div class="formula">TYT puanı = 100 + 3,3×Türkçe + 3,4×Sosyal + 3,3×Matematik + 3,4×Fen<br>SAY puanı = 100 + 0,4×TYT bileşeni + AYT netleri × katsayıları</div>
+<p>AYT katsayıları: Matematik 3, Fizik 2,85, Kimya 3,07, Biyoloji 3,07 (Sayısal). Edebiyat 3, Tarih-1 2,8, Coğrafya-1 3,33 (Eşit ağırlık ve Sözel). Sözelde ayrıca Tarih-2 ve Coğrafya-2 2,91, Felsefe 3, Din Kültürü 3,33.</p>
+<h2>Yerleştirme puanı ve sıralama</h2>
+<p>Yerleştirme puanı, ham puana diploma notunun (OBP) katkısını ekler: diploma notu × 5 × 0,12 = diploma notu × 0,6. Sıralama, belirli bir puanın üstünde kaç aday olduğunu gösteren dağılımdan bulunur. İki puan arasındaki değerler logaritmik olarak ara değerlenir.</p>
+<h2>Bu tahmin ne kadar güvenilir?</h2>
+<p>ÖSYM standart puan kullanır: her yılın ortalama ve standart sapması puanı etkiler. Bu araç sabit katsayılarla ham puanı yaklaşık hesaplar. Sıralama aralığı ±8 puan için verilir. Tercih yapmadan önce ÖSYM sonuç belgendeki puanı ve başarı sırasını esas al.</p><h2>Sık sorulan sorular</h2><details><summary>Sıralama verisi hangi yıla ait?</summary><p>ÖSYM'nin yayımladığı 2025 YKS yerleştirme puanlarının yığınsal dağılımı kullanılır. 2026 dağılımı farklı olabilir; yaklaşık bir yön gösterir.</p></details><details><summary>Diploma notu neden önemli?</summary><p>Diploma notun yerleştirme puanına en fazla 60 puan ekler. 100 diploma notu ile 50 arasında 30 puan fark oluşur.</p></details><details><summary>Net nasıl hesaplanır?</summary><p>Dört yanlış bir doğruyu götürür. 30 doğru ve 8 yanlış 28 net eder.</p></details></section>
+<section class="related"><h2>Diğer hesaplayıcılar</h2><div class="grid"><a class="tool-card" href="gano-hesaplama.html" data-k="GANO hesaplama Dönem ve genel not ortalamasını 4,00 sistemine göre hesapla. gano dno not ortalaması üniversite harf notu kredi akts 4 lük sistem"><span class="glyph" aria-hidden="true">G</span><span><h3>GANO hesaplama</h3><p>Dönem ve genel not ortalamasını 4,00 sistemine göre hesapla.</p></span></a><a class="tool-card" href="vize-final-ortalama-hesaplama.html" data-k="Vize final ortalaması Ders ortalamasını ve geçmek için gereken final notunu bul. vize final ortalama geçme notu ders kaç almalıyım bütünleme not hesaplama"><span class="glyph" aria-hidden="true">V</span><span><h3>Vize final ortalaması</h3><p>Ders ortalamasını ve geçmek için gereken final notunu bul.</p></span></a><a class="tool-card" href="yuzde-hesaplama.html" data-k="Yüzde hesaplama Yüzde bulma, yüzde fark, indirim ve artış için altı hızlı hesap. yüzde hesaplama yüzde kaç indirim zam artış oran yüzde fark"><span class="glyph" aria-hidden="true">%</span><span><h3>Yüzde hesaplama</h3><p>Yüzde bulma, yüzde fark, indirim ve artış için altı hızlı hesap.</p></span></a></div></section>
+</main>
+<footer class="wrap foot"><p><strong>Hesapça</strong>: sonuçlar tarayıcında hesaplanır, girdiğin rakamlar hiçbir yere gönderilmez.</p><p>Hesaplamalar bilgilendirme amaçlıdır ve bağlayıcı değildir; yatırım tavsiyesi içermez. Oranlar ve vergi dilimleri zamanla değişir. Karar vermeden önce bankandan veya resmi kaynaklardan doğrula.</p></footer>
+<script src="app.js"></script>
+<script>(() => {
+    const P = [550, 530, 510, 490, 470, 450, 430, 410, 390, 370, 350, 330, 310, 290, 270, 250, 230, 210, 190, 170, 150];
+    const D = {
+      SAY: [57, 1930, 7081, 16140, 29410, 46142, 65449, 87117, 111498, 139619, 174355, 217778, 274252, 348397, 449880, 596635, 811201, 1052783, 1228141, 1287932, 1291491],
+      EA: [4, 58, 261, 742, 1629, 3422, 8145, 20244, 42590, 76959, 125389, 192949, 287630, 418975, 592803, 806796, 1042314, 1262545, 1425544, 1489209, 1494521],
+      SOZ: [1, 7, 26, 77, 254, 721, 1926, 5036, 12522, 28323, 57848, 108894, 190203, 309551, 468930, 658973, 849410, 1010174, 1121933, 1168866, 1173955],
+      TYT: [14, 601, 3648, 11733, 27141, 52500, 88915, 137133, 201126, 286158, 397823, 545280, 737144, 976188, 1251236, 1542701, 1835041, 2099883, 2270224, 2308495, 2310553],
+    };
+    const rankAt = (t, p) => {
+      const c = D[t];
+      if (p <= 150) return c[c.length - 1];
+      if (p >= 550) { const s = Math.log(c[1] / c[0]) / (P[1] - P[0]); return Math.max(1, c[0] * Math.exp(s * (p - 550))); }
+      for (let i = 0; i < P.length - 1; i++) {
+        if (p <= P[i] && p >= P[i + 1]) {
+          const w = (P[i] - p) / (P[i] - P[i + 1]);
+          return Math.exp(Math.log(c[i]) * (1 - w) + Math.log(c[i + 1]) * w);
+        }
+      }
+      return c[0];
+    };
+    const sig = (n) => { if (n < 100) return Math.max(1, Math.round(n)); const m = Math.pow(10, Math.floor(Math.log10(n)) - 2); return Math.round(n / m) * m; };
+    const show = (n) => H.fmt(sig(n), 0);
+    const names = { SAY: 'Sayısal', EA: 'Eşit ağırlık', SOZ: 'Sözel', TYT: 'TYT' };
+    const gm = { TYT: 'TYT', SAY: 'SAY', EA: 'EA', SOZ: 'SOZ' };
+    const inputs = [].slice.call(document.querySelectorAll('[data-g]'));
+    const ids = ['tur', 'dip', 'ptur', 'pup'];
+    document.querySelectorAll('[data-g], [data-id]').forEach((e) => ids.push(e.id));
+    inputs.forEach((e) => ids.push(e.id.replace(/d$/, 'y')));
+    H.$('tur').addEventListener('change', () => {
+      const t = H.sv('tur');
+      ['SAY', 'EA', 'SOZ'].forEach((g) => { H.$('grp-' + g).hidden = g !== t; });
+      H.$('ayt').hidden = t === 'TYT';
+    });
+    H.on(ids, () => {
+      const t = H.sv('tur');
+      let bad = '', tyt = 0, ayt = 0;
+      inputs.forEach((e) => {
+        const g = e.getAttribute('data-g');
+        const grp = e.closest('[id^="grp-"]');
+        const gid = grp ? grp.id.replace('grp-', '') : '';
+        if (g === 'AYT' && gid !== t) return;
+        const d = Math.max(0, H.val(e.id)), y = Math.max(0, H.val(e.id.replace(/d$/, 'y')));
+        const max = Number(e.getAttribute('data-max'));
+        if (d + y > max && !bad) bad = e.getAttribute('aria-label').replace(' doğru', '') + ': doğru ve yanlış toplamı ' + max + ' soruyu aşıyor.';
+        const net = Math.max(0, Math.min(max, d - y / 4));
+        const k = Number(e.getAttribute('data-k'));
+        if (g === 'TYT') tyt += net * k; else ayt += net * k;
+      });
+      const tytPuan = 100 + tyt;
+      const ham = t === 'TYT' ? tytPuan : 100 + tyt * 0.4 + ayt;
+      const dip = Math.max(0, Math.min(100, H.val('dip')));
+      const obp = dip * 0.6, yer = ham + obp;
+      const lo = rankAt(gm[t], yer + 8), mid = rankAt(gm[t], yer), hi = rankAt(gm[t], yer - 8);
+      H.big('Tahmini başarı sırası', '~' + show(mid));
+      H.ledger('out', [
+        { k: 'TYT puanı (ham)', v: H.fmt(tytPuan, 2) },
+        { k: names[t] + ' puanı (ham)', v: H.fmt(ham, 2) },
+        { k: 'Diploma katkısı', v: '+' + H.fmt(obp, 2) },
+        { sep: true },
+        { k: 'Yerleştirme puanı', v: H.fmt(yer, 2), strong: true },
+        { k: 'Sıralama aralığı (±8 puan)', v: show(lo) + ' – ' + show(hi) },
+      ]);
+      H.msg(bad);
+      const pt = H.$('ptur').value, pp = Math.max(150, Math.min(560, H.val('pup')));
+      H.$('pres').textContent = H.val('pup') > 0 ? '~' + show(rankAt(pt, pp)) + '. sıra' : '–';
+    });
+  })();</script>
+</body>
+</html>
